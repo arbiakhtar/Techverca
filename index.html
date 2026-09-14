@@ -618,7 +618,7 @@
         </div>
 
         <div class="text-center mt-4">
-            <span class="text-slate-400 text-[10px] tracking-wider uppercase font-bold cursor-pointer" ondblclick="toggleAdminPanelDirect()">(Console Root Access)</span>
+            <span class="text-slate-400 text-[10px] tracking-wider uppercase font-bold cursor-pointer" onclick="toggleAdminPanelDirect()">(Console Root Access)</span>
         </div>
     </footer>
 
@@ -904,7 +904,6 @@
         // Real admin gate: Supabase Auth session, not a client-side flag.
         let isAdminLoggedIn = false;
 
-        // storeSettings comes from Supabase; local object is just the fallback default
         let storeSettings = {
             email: "support@techverca.com",
             phone: "+91 78703 20868",
@@ -916,13 +915,9 @@
         // Supabase Configuration
         const SUPABASE_URL = "https://ldwktjodwfvyynjemzzc.supabase.co";
         const SUPABASE_ANON_KEY = "sb_publishable_4T751KfPgKJybm8owvsoRg_o707OhsZ";
-        if (!window.supabase) {
-            alert("Error: Supabase library load nahi hui (network/CDN issue ho sakta hai). Page reload karke try karein.");
-            throw new Error("Supabase SDK failed to load from CDN");
-        }
         const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-        // Load products from Supabase (each row: id = product id, data = jsonb product object)
+        // Load products (each row: id = product id, data = jsonb product object)
         async function loadProducts() {
             const { data: rows, error } = await supabase.from('products').select('*');
             if (error) {
@@ -940,7 +935,7 @@
             renderProducts();
         }
 
-        // Load store settings from Supabase
+        // Load store settings
         async function loadStoreSettings() {
             const { data: row, error } = await supabase.from('store_settings').select('*').eq('id', 'main').maybeSingle();
             if (error) {
@@ -969,9 +964,8 @@
         }
 
         // REAL security gate: only a signed-in Supabase user is treated as admin.
-        // This works together with Supabase Row Level Security policies (set via
-        // SQL Editor) which reject writes from anyone who isn't authenticated —
-        // so even someone bypassing this UI via browser console cannot write.
+        // Backed by Row Level Security policies (set via SQL Editor) which reject
+        // writes from anyone who isn't authenticated.
         supabase.auth.onAuthStateChange((event, session) => {
             isAdminLoggedIn = !!session;
             if (isAdminLoggedIn) {
@@ -982,14 +976,12 @@
             }
         });
 
-        // Check for an existing session on page load (e.g. after refresh)
         supabase.auth.getSession().then(({ data: { session } }) => {
             isAdminLoggedIn = !!session;
             if (isAdminLoggedIn) showAdminElements();
         });
 
-        // Realtime sync: refresh data whenever any row changes (insert/update/delete)
-        // so changes made from one device/tab appear everywhere without manual refresh.
+        // Realtime sync: refresh data whenever any row changes
         supabase
             .channel('products-changes')
             .on('postgres_changes', { event: '*', schema: 'public', table: 'products' }, () => {
@@ -1497,7 +1489,7 @@ Hello Support, I want to complete my purchase for this license key. Please send 
                 errorEl.classList.remove('hidden');
             }
             // On success, onAuthStateChange listener handles closing the modal
-            // and revealing the admin panel — no need to duplicate that logic here.
+            // and revealing the admin panel.
         }
 
         async function adminLogout() {
@@ -1533,7 +1525,7 @@ Hello Support, I want to complete my purchase for this license key. Please send 
             document.getElementById('adminPanel').classList.add('hidden');
         }
 
-        function handleCreateProduct(e) {
+        async function handleCreateProduct(e) {
             e.preventDefault();
             const id = document.getElementById('p_id').value.trim();
 
@@ -1567,14 +1559,17 @@ Hello Support, I want to complete my purchase for this license key. Please send 
                 ]
             };
 
+            const { error } = await supabase.from('products').insert({ id: newProd.id, data: newProd });
+            if (error) {
+                alert("Save FAILED: " + error.message);
+                return;
+            }
             products.push(newProd);
-            saveProducts();
             renderProducts();
             document.getElementById('addProductForm').reset();
             alert("Product entry committed successfully!");
         }
 
-        // Saved to Supabase so it stays in sync across all devices
         async function saveFooterSettings(e) {
             e.preventDefault();
             storeSettings = {
@@ -1616,18 +1611,14 @@ Hello Support, I want to complete my purchase for this license key. Please send 
 
             const p = products.find(prod => prod.id === currentModalProductId);
             if (!p) {
-                alert("Product nahi mila. Page refresh karke dobara try karein.");
+                alert("Product nahi mila.");
                 return;
             }
 
             p.imageUrl = url;
-
-            // Keyed by stable product ID, own database row — safe even if
-            // another admin edits a different product at the same time.
             const { error } = await supabase.from('products').update({ data: p }).eq('id', p.id);
             if (error) {
-                alert("Save FAILED: " + error.message + "\n\nAapka login session expire ho sakta hai. Kripya logout karke dobara login karein aur phir try karein.");
-                console.error("updateModalImageDirect error:", error);
+                alert("Save FAILED: " + error.message + "\n\nAapka login session expire ho sakta hai. Kripya logout karke dobara login karein.");
                 return;
             }
             renderProducts();
@@ -1660,7 +1651,6 @@ Hello Support, I want to complete my purchase for this license key. Please send 
             const { error } = await supabase.from('products').update({ data: p }).eq('id', p.id);
             if (error) {
                 alert("Save FAILED: " + error.message);
-                console.error("updateModalPriceDirect error:", error);
                 return;
             }
             renderProducts();
@@ -1688,7 +1678,6 @@ Hello Support, I want to complete my purchase for this license key. Please send 
             const { error } = await supabase.from('products').update({ data: p }).eq('id', p.id);
             if (error) {
                 alert("Save FAILED: " + error.message);
-                console.error("updateModalDescriptionDirect error:", error);
                 return;
             }
             renderProducts();
@@ -1715,7 +1704,6 @@ Hello Support, I want to complete my purchase for this license key. Please send 
             const { error } = await supabase.from('products').update({ data: p }).eq('id', p.id);
             if (error) {
                 alert("Save FAILED: " + error.message);
-                console.error("updateModalActivationDirect error:", error);
                 return;
             }
             renderProducts();
@@ -1759,7 +1747,6 @@ Hello Support, I want to complete my purchase for this license key. Please send 
             const { error } = await supabase.from('products').update({ data: p }).eq('id', p.id);
             if (error) {
                 alert("Save FAILED: " + error.message);
-                console.error("addNewVariantToProduct error:", error);
                 return;
             }
             renderProducts();
@@ -1788,22 +1775,11 @@ Hello Support, I want to complete my purchase for this license key. Please send 
             const { error } = await supabase.from('products').update({ data: p }).eq('id', p.id);
             if (error) {
                 alert("Save FAILED: " + error.message);
-                console.error("removeSelectedVariant error:", error);
                 return;
             }
             renderProducts();
             openProductModal(p.id);
             alert("License option removed successfully.");
-        }
-
-        // Used by handleCreateProduct to insert a brand-new product row
-        async function saveProducts() {
-            const p = products[products.length - 1];
-            const { error } = await supabase.from('products').insert({ id: p.id, data: p });
-            if (error) {
-                alert("Save FAILED: " + error.message);
-                console.error("saveProducts error:", error);
-            }
         }
     </script>
 </body>
