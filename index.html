@@ -668,6 +668,7 @@
 
     <!-- JAVASCRIPT LOGIC ENGINE -->
     <script>
+        alert("SCRIPT STARTED RUNNING - TEST 1");
         window.onerror = function(message, source, lineno, colno, error) {
             alert("JS ERROR:\n" + message + "\nLine: " + lineno);
             return false;
@@ -923,6 +924,7 @@
         const SUPABASE_URL = "https://ldwktjodwfvyynjemzzc.supabase.co";
         const SUPABASE_ANON_KEY = "sb_publishable_4T751KfPgKJybm8owvsoRg_o707OhsZ";
         const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        alert("SCRIPT STARTED RUNNING - TEST 2 (Supabase client created)");
 
         // Load products (each row: id = product id, data = jsonb product object)
         async function loadProducts() {
@@ -1009,6 +1011,7 @@
             .subscribe();
 
         document.addEventListener('DOMContentLoaded', () => {
+            alert("SCRIPT STARTED RUNNING - TEST 3 (DOMContentLoaded fired)");
             loadProducts();
             loadStoreSettings();
             startCountdown(13, 11);
