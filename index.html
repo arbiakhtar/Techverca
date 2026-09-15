@@ -3,25 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSP: jsdelivr + cdnjs + tailwind allowed -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' https: data:; connect-src 'self' https://ldwktjodwfvyynjemzzc.supabase.co wss://ldwktjodwfvyynjemzzc.supabase.co; frame-src 'none'; object-src 'none'; base-uri 'self';">
     <title>TechVerca | Premium Authorized Software Hub</title>
-    <meta name="description" content="Buy genuine Microsoft Windows, Office, and Antivirus software license keys with instant digital delivery via Telegram. 100% authorized activation, secure checkout, and 7-day money-back guarantee.">
+    <meta name="description" content="Buy genuine Microsoft Windows, Office, and Antivirus software license keys with instant digital delivery via Telegram.">
     <link rel="canonical" href="https://www.techverca.com/">
-
-    <!-- Open Graph / Facebook / WhatsApp link previews -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.techverca.com/">
     <meta property="og:title" content="TechVerca | Premium Authorized Software Hub">
-    <meta property="og:description" content="Buy genuine Microsoft Windows, Office, and Antivirus software license keys with instant digital delivery via Telegram. 100% authorized activation and secure checkout.">
+    <meta property="og:description" content="Buy genuine Microsoft Windows, Office, and Antivirus software license keys with instant digital delivery via Telegram.">
     <meta property="og:image" content="https://i.postimg.cc/zfFNSccm/file-00000000da7c82119bfa39e8dbceecaf.png">
-
-    <!-- Twitter/X Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="TechVerca | Premium Authorized Software Hub">
     <meta name="twitter:description" content="Buy genuine Microsoft Windows, Office, and Antivirus software license keys with instant digital delivery via Telegram.">
     <meta name="twitter:image" content="https://i.postimg.cc/zfFNSccm/file-00000000da7c82119bfa39e8dbceecaf.png">
-
-    <!-- Browser Tab Favicon / Logo -->
     <link rel="icon" type="image/png" sizes="48x48" href="https://i.postimg.cc/zfFNSccm/file-00000000da7c82119bfa39e8dbceecaf.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -34,26 +29,12 @@
         .modal-active { overflow: hidden !important; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        #productModal.active-modal {
-            display: flex !important;
-            opacity: 1 !important;
-            pointer-events: auto !important;
-        }
-        @keyframes popupSlide {
-            0% { transform: translateY(20px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
-        }
+        #productModal.active-modal { display: flex !important; opacity: 1 !important; pointer-events: auto !important; }
+        @keyframes popupSlide { 0% { transform: translateY(20px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
         .animate-popup { animation: popupSlide 0.4s ease-out forwards; }
-
-        /* Key Forge hero glow */
-        @keyframes keyGlow {
-            0%, 100% { box-shadow: 0 0 0 rgba(37,99,235,0); }
-            50% { box-shadow: 0 0 24px rgba(37,99,235,.25); }
-        }
+        @keyframes keyGlow { 0%, 100% { box-shadow: 0 0 0 rgba(37,99,235,0); } 50% { box-shadow: 0 0 24px rgba(37,99,235,.25); } }
         .key-panel { animation: keyGlow 3.2s ease-in-out infinite; }
-        @media (prefers-reduced-motion: reduce) {
-            .key-panel { animation: none !important; }
-        }
+        @media (prefers-reduced-motion: reduce) { .key-panel { animation: none !important; } }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans antialiased pb-20">
@@ -64,7 +45,6 @@
     <!-- Slide-over Navigation Drawer Sidebar -->
     <div id="navDrawer" class="fixed top-0 left-0 bottom-0 w-80 max-w-[85vw] bg-white z-50 shadow-2xl -translate-x-full transition-transform duration-300 flex flex-col justify-between overflow-y-auto">
         <div>
-            <!-- Drawer Header -->
             <div class="p-4 bg-slate-900 text-white flex items-center justify-between border-b border-slate-800">
                 <div class="font-display text-lg font-bold tracking-tight text-white">
                     TECH<span class="text-blue-500">VERCA</span><span class="text-amber-500 text-xs align-super ml-0.5">®</span>
@@ -74,7 +54,6 @@
                 </button>
             </div>
 
-            <!-- Server Status Card -->
             <div class="m-4 p-3 bg-emerald-50 border border-emerald-200 rounded-xl flex items-center gap-3">
                 <span class="relative flex h-3 w-3 shrink-0">
                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -86,7 +65,6 @@
                 </div>
             </div>
 
-            <!-- Categories Section -->
             <div class="px-4 py-2">
                 <p class="text-[10px] font-black text-slate-400 uppercase tracking-wider mb-2">Browse Categories</p>
                 <div class="space-y-1">
@@ -107,7 +85,6 @@
 
             <div class="border-t border-slate-100 my-2"></div>
 
-            <!-- Quick Links -->
             <div class="px-4 py-2">
                 <p class="text-[10px] font-black text-slate-400 uppercase tracking-wider mb-2">Help & Legal</p>
                 <div class="space-y-1">
@@ -124,7 +101,6 @@
             </div>
         </div>
 
-        <!-- Drawer Footer -->
         <div class="p-4 border-t border-slate-100 bg-slate-50 space-y-2">
             <a href="https://t.me/+917870320868" target="_blank" class="block w-full text-center bg-[#229ED9] hover:bg-blue-600 text-white font-bold text-xs py-2.5 rounded-xl shadow transition">
                 <i class="fab fa-telegram mr-1.5 text-sm"></i> Telegram Support
@@ -169,7 +145,6 @@
             <h1 class="font-display text-2xl sm:text-4xl font-bold tracking-tight mb-2">Genuine Digital Licenses. Instant Delivery.</h1>
             <p class="text-slate-400 text-xs sm:text-sm max-w-xl mx-auto mb-6">Get 100% official Microsoft Windows, Office & Antivirus product keys with lifetime validity and direct support.</p>
 
-            <!-- Live Trust Badges -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-left max-w-3xl mx-auto mb-6">
                 <div class="bg-slate-800/60 border border-slate-700/50 p-3 rounded-xl backdrop-blur-sm">
                     <p class="text-amber-400 text-xs font-black">★★★★★ 4.5/5</p>
@@ -189,7 +164,6 @@
                 </div>
             </div>
 
-            <!-- Live Key Forge Preview -->
             <div class="key-panel bg-slate-800/60 border border-slate-700/50 rounded-2xl p-5 max-w-md mx-auto text-left backdrop-blur-sm">
                 <p class="text-[10px] uppercase tracking-widest text-slate-400 mb-2 flex items-center justify-between">
                     <span>Live Key Preview</span>
@@ -214,7 +188,7 @@
         </div>
     </section>
 
-    <!-- ADMIN DASHBOARD CONTROL PANEL -->
+    <!-- ADMIN DASHBOARD -->
     <div id="adminPanel" class="max-w-7xl mx-4 lg:mx-auto p-5 bg-slate-900 border border-slate-800 rounded-2xl my-6 hidden shadow-xl text-slate-200">
         <div class="flex justify-between items-center mb-6 border-b border-slate-800 pb-4">
             <h2 class="text-base font-bold tracking-wide flex items-center text-white"><i class="fas fa-sliders text-blue-500 mr-2"></i>TechVerca Secure Console Panel</h2>
@@ -233,7 +207,7 @@
                 <input type="text" id="p_id" required placeholder="win10_pro_retail" class="w-full bg-slate-900 border border-slate-800 p-2.5 rounded-lg text-white focus:outline-none focus:border-blue-500">
             </div>
             <div>
-                <label class="block font-medium mb-1.5 text-slate-400">Product Title (Display Name):</label>
+                <label class="block font-medium mb-1.5 text-slate-400">Product Title:</label>
                 <input type="text" id="p_title" required placeholder="Microsoft Windows 10 Pro..." class="w-full bg-slate-900 border border-slate-800 p-2.5 rounded-lg text-white focus:outline-none focus:border-blue-500">
             </div>
             <div>
@@ -253,15 +227,15 @@
                 <input type="text" id="p_sub" required placeholder="Lifetime License / Global" class="w-full bg-slate-900 border border-slate-800 p-2.5 rounded-lg text-white focus:outline-none focus:border-blue-500">
             </div>
             <div>
-                <label class="block font-medium mb-1.5 text-slate-400">Our Offer Price (e.g., $15.02):</label>
+                <label class="block font-medium mb-1.5 text-slate-400">Our Offer Price:</label>
                 <input type="text" id="p_price" required placeholder="$15.02" class="w-full bg-slate-900 border border-slate-800 p-2.5 rounded-lg text-white focus:outline-none focus:border-blue-500">
             </div>
             <div>
-                <label class="block font-medium mb-1.5 text-slate-400">Cut-out Original Price (e.g., $70):</label>
+                <label class="block font-medium mb-1.5 text-slate-400">Cut-out Original Price:</label>
                 <input type="text" id="p_cut" required placeholder="$70" class="w-full bg-slate-900 border border-slate-800 p-2.5 rounded-lg text-white focus:outline-none focus:border-blue-500">
             </div>
             <div>
-                <label class="block font-medium mb-1.5 text-slate-400">Description (Inside Modal Box):</label>
+                <label class="block font-medium mb-1.5 text-slate-400">Description:</label>
                 <input type="text" id="p_desc" required placeholder="Full activation code suite..." class="w-full bg-slate-900 border border-slate-800 p-2.5 rounded-lg text-white focus:outline-none focus:border-blue-500">
             </div>
             <div class="md:col-span-4">
@@ -305,7 +279,7 @@
         </form>
     </div>
 
-    <!-- HOW IT WORKS SECTION -->
+    <!-- HOW IT WORKS -->
     <section class="max-w-6xl mx-auto px-4 py-10">
         <div class="text-center mb-8">
             <span class="text-[10px] font-bold text-blue-600 tracking-widest uppercase block mb-1">Simple 3-Step Process</span>
@@ -335,7 +309,7 @@
         <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5" id="productsGrid"></div>
     </main>
 
-    <!-- CUSTOMER REVIEWS / SOCIAL PROOF SECTION -->
+    <!-- REVIEWS -->
     <section class="max-w-7xl mx-auto px-4 py-10 border-t border-slate-200/80">
         <div class="text-center mb-8">
             <span class="text-[10px] font-bold text-blue-600 tracking-widest uppercase block mb-1">Real Client Feedback</span>
@@ -372,7 +346,7 @@
         </div>
     </section>
 
-    <!-- FAQ SECTION -->
+    <!-- FAQ -->
     <section id="faq" class="max-w-4xl mx-auto px-4 py-10 border-t border-slate-200/80">
         <div class="text-center mb-8">
             <span class="text-[10px] font-bold text-blue-600 tracking-widest uppercase block mb-1">Got Questions?</span>
@@ -412,7 +386,7 @@
         </div>
     </section>
 
-    <!-- PRODUCT MODAL SYSTEM -->
+    <!-- PRODUCT MODAL -->
     <div id="productModal" style="display:none; z-index: 9999;" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl max-w-5xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative flex flex-col md:flex-row border border-slate-100">
             
@@ -420,7 +394,6 @@
                 <i class="fas fa-times"></i>
             </button>
 
-            <!-- Left Panel -->
             <div class="w-full md:w-1/2 p-6 md:p-8 border-r border-slate-100 flex flex-col justify-between">
                 <div>
                     <div class="bg-slate-900 border border-slate-800 rounded-2xl min-h-[220px] max-h-[300px] flex items-center justify-center relative overflow-hidden mb-3 p-2">
@@ -478,7 +451,6 @@
                 </div>
             </div>
 
-            <!-- Right Panel -->
             <div class="w-full md:w-1/2 p-6 md:p-8 bg-slate-50/50 flex flex-col justify-between">
                 <div>
                     <span class="text-[10px] font-bold text-blue-600 tracking-widest uppercase block mb-1.5">Authorized Digital SKU</span>
@@ -524,7 +496,6 @@
                     </div>
                 </div>
 
-                <!-- Checkout Button -->
                 <div class="space-y-2">
                     <a id="checkoutTelegramLink" href="#" target="_blank" class="w-full bg-[#229ED9] hover:bg-[#1d88bc] text-white font-bold text-xs py-3.5 rounded-xl transition shadow-md flex items-center justify-center tracking-wide">
                         <i class="fab fa-telegram mr-2 text-base"></i> Buy via Telegram
@@ -535,7 +506,7 @@
         </div>
     </div>
 
-    <!-- POLICY & LEGAL CONTENT MODAL -->
+    <!-- POLICY MODAL -->
     <div id="policyModal" style="display:none; z-index: 9999;" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl max-w-3xl w-full max-h-[85vh] overflow-y-auto shadow-2xl relative p-6 md:p-8 border border-slate-100">
             <button onclick="closePolicyModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-900 text-sm z-50 bg-slate-100 border border-slate-200 p-2 rounded-full h-9 w-9 flex items-center justify-center transition">
@@ -596,7 +567,6 @@
             </p>
         </div>
 
-        <!-- NEWLY ADDED DISCLAIMER & TERMS SECTION -->
         <div class="max-w-7xl mx-auto px-6 mt-6">
             <div class="p-5 bg-slate-50 border border-slate-200 rounded-2xl text-left text-xs text-slate-500 leading-relaxed">
                 <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider mb-3 flex items-center">
@@ -604,15 +574,15 @@
                 </h4>
                 
                 <p class="mb-2">
-                    <strong class="text-slate-700">1. Indian Currency (INR) Exchange Rate Notice:</strong> Please note that if you choose to make a payment using <strong>Indian Rupees (INR)</strong> via UPI, Card, or any local gateway, the final transaction amount will be converted and calculated strictly based on the real-time foreign exchange rate at the exact moment of payment processing. Any foreign exchange convenience fees, banking charges, or conversion surcharges imposed by your bank or payment service provider will be added to the transaction and borne by the customer.
+                    <strong class="text-slate-700">1. Indian Currency (INR) Exchange Rate Notice:</strong> Please note that if you choose to make a payment using <strong>Indian Rupees (INR)</strong> via UPI, Card, or any local gateway, the final transaction amount will be converted and calculated strictly based on the real-time foreign exchange rate at the exact moment of payment processing.
                 </p>
                 
                 <p class="mb-2">
-                    <strong class="text-slate-700">2. Digital Product Delivery & Refunds:</strong> TechVerca delivers 100% genuine and authentic digital activation keys instantly. Due to the unique nature of digital software licenses, all sales are final once a license key is issued or dispatched. Refunds or replacements are only applicable if a product key is verified as defective or invalid by our technical support team within the official warranty period.
+                    <strong class="text-slate-700">2. Digital Product Delivery & Refunds:</strong> TechVerca delivers 100% genuine and authentic digital activation keys instantly. Due to the unique nature of digital software licenses, all sales are final once a license key is issued or dispatched.
                 </p>
                 
                 <p class="mb-0">
-                    <strong class="text-slate-700">3. Licensing & Compliance:</strong> Customers are responsible for verifying system compatibility before placing an order. Abuse of license keys, unauthorized distribution, or policy violations will result in immediate activation cancellation without refund eligibility. By completing your order on TechVerca, you acknowledge and agree to these terms.
+                    <strong class="text-slate-700">3. Licensing & Compliance:</strong> Customers are responsible for verifying system compatibility before placing an order. By completing your order on TechVerca, you acknowledge and agree to these terms.
                 </p>
             </div>
         </div>
@@ -622,7 +592,7 @@
         </div>
     </footer>
 
-    <!-- STICKY BOTTOM NAVIGATION BAR -->
+    <!-- STICKY BOTTOM NAV -->
     <div class="fixed bottom-0 inset-x-0 bg-white border-t border-slate-200/80 z-40 py-2 shadow-lg">
         <div class="max-w-md mx-auto grid grid-cols-4 text-center">
             <a href="#store" onclick="filterCategory('all')" class="flex flex-col items-center justify-center text-slate-500 hover:text-blue-600 transition">
@@ -644,7 +614,7 @@
         </div>
     </div>
 
-    <!-- ADMIN LOGIN MODAL (Supabase Authentication) -->
+    <!-- ADMIN LOGIN MODAL -->
     <div id="adminLoginModal" style="display:none; z-index: 9999;" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl max-w-sm w-full shadow-2xl relative p-6 border border-slate-100">
             <button onclick="closeAdminLoginModal()" class="absolute top-3 right-3 text-slate-400 hover:text-slate-900 text-sm bg-slate-100 border border-slate-200 p-2 rounded-full h-8 w-8 flex items-center justify-center transition">
@@ -666,17 +636,15 @@
     <!-- SUPABASE SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-    <!-- JAVASCRIPT LOGIC ENGINE -->
     <script>
-        alert("SCRIPT STARTED RUNNING - TEST 1");
-        window.onerror = function(message, source, lineno, colno, error) {
-            alert("JS ERROR:\n" + message + "\nLine: " + lineno);
+        // ---- DEBUG: remove after fixing ----
+        window.onerror = function (message, source, lineno, colno) {
+            console.error("JS ERROR:", message, "Line:", lineno);
             return false;
         };
-        window.addEventListener('unhandledrejection', function(event) {
-            alert("PROMISE ERROR:\n" + (event.reason && event.reason.message ? event.reason.message : event.reason));
-        });
-        // Initial catalog data fallback
+        window.addEventListener('unhandledrejection', e => console.error("PROMISE ERROR:", e.reason));
+
+        // ================= INITIAL LOCAL CATALOG (always available) =================
         const initialProducts = [
             {
                 id: "win11_pro_retail",
@@ -689,44 +657,12 @@
                 cutPrice: "$80",
                 badge: "🔥 HOT SELLER",
                 description: "Official Microsoft Windows 11 Pro Retail (Lifetime License / Global). Transferable key bound with Microsoft Account.",
-                activation: "ACTIVATION INSTRUCTIONS:\n\nDownload link: https://www.microsoft.com/software-download/windows11\n\nMethod 1 (Online Activation):\n1. Go to Settings.\n2. Find 'Activation'.\n3. Select 'Activate' or 'Change Product Key'.\n4. Insert the purchased key.\n5. Windows 11 Pro is operational.\n\nMethod 2 (Phone Activation):\n1. Go to Settings -> Update & Security -> Activation.\n2. Choose 'Activate by phone'.\n3. Select your country from the dropdown and click Next.\n4. Call the toll-free number and follow instructions to generate a confirmation ID.\n\nMethod 3 (SLUI Command):\n1. Press Windows key + R.\n2. Type 'SLUI 4' and press Enter.\n3. Select your country and click Next.\n4. Call the toll-free number and follow instructions to activate.",
+                activation: "ACTIVATION INSTRUCTIONS:\n\nDownload link: https://www.microsoft.com/software-download/windows11\n\nMethod 1 (Online Activation):\n1. Go to Settings.\n2. Find 'Activation'.\n3. Select 'Activate' or 'Change Product Key'.\n4. Insert the purchased key.",
                 variants: [
-                    { 
-                        id: "v11_pro_retail", 
-                        name: "Microsoft Windows 11 Pro Retail (Lifetime License / Global)", 
-                        sub: "Transferable License", 
-                        desc: "Official Windows 11 Pro Retail key. Can be linked directly to your Microsoft Account and transferred to another PC in the future.", 
-                        activation: "ACTIVATION INSTRUCTIONS:\n\nDownload link: https://www.microsoft.com/software-download/windows11\n\nMethod 1 (Online Activation):\n1. Go to Settings.\n2. Find 'Activation'.\n3. Select 'Activate' or 'Change Product Key'.\n4. Insert the purchased key.\n5. Windows 11 Pro is operational.\n\nMethod 2 (Phone Activation):\n1. Go to Settings -> Update & Security -> Activation.\n2. Choose 'Activate by phone'.\n3. Select your country from the dropdown and click Next.\n4. Call the toll-free number and follow instructions to generate a confirmation ID.\n\nMethod 3 (SLUI Command):\n1. Press Windows key + R.\n2. Type 'SLUI 4' and press Enter.\n3. Select your country and click Next.\n4. Call the toll-free number and follow instructions to activate.",
-                        price: "$16.20", 
-                        cutPrice: "$80" 
-                    },
-                    { 
-                        id: "v11_pro_oem", 
-                        name: "Microsoft Windows 11 Pro OEM (Lifetime License / Global)", 
-                        sub: "Single PC / Hardware Bound", 
-                        desc: "Official Windows 11 Pro OEM key. Binds permanently to your motherboard hardware for lifetime single-PC activation.", 
-                        activation: "ACTIVATION INSTRUCTIONS:\n\nDownload link: https://www.microsoft.com/software-download/windows11\n\nMethod 1 (Online Activation):\n1. Go to Settings.\n2. Find 'Activation'.\n3. Select 'Activate' or 'Change Product Key'.\n4. Insert the purchased key.\n5. Windows 11 Pro is operational.\n\nMethod 2 (Phone Activation):\n1. Go to Settings -> Update & Security -> Activation.\n2. Choose 'Activate by phone'.\n3. Select your country from the dropdown and click Next.\n4. Call the toll-free number and follow instructions to generate a confirmation ID.\n\nMethod 3 (SLUI Command):\n1. Press Windows key + R.\n2. Type 'SLUI 4' and press Enter.\n3. Select your country and click Next.\n4. Call the toll-free number and follow instructions to activate.",
-                        price: "$11.60", 
-                        cutPrice: "$60" 
-                    },
-                    { 
-                        id: "v11_home_oem", 
-                        name: "Microsoft Windows 11 Home OEM (Lifetime License / Global)", 
-                        sub: "Single PC / Home License", 
-                        desc: "Official Windows 11 Home Edition key. Perfect for personal/home PCs with complete core OS functionality.", 
-                        activation: "ACTIVATION INSTRUCTIONS:\n\nDownload link: https://www.microsoft.com/software-download/windows11\n\nMethod 1 (Online Activation):\n1. Go to Settings.\n2. Find 'Activation'.\n3. Select 'Activate' or 'Change Product Key'.\n4. Insert the purchased key.\n5. Windows 11 Home is operational.\n\nMethod 2 (Phone Activation):\n1. Go to Settings -> Update & Security -> Activation.\n2. Choose 'Activate by phone'.\n3. Select your country from the dropdown and click Next.\n4. Call the toll-free number and follow instructions to generate a confirmation ID.\n\nMethod 3 (SLUI Command):\n1. Press Windows key + R.\n2. Type 'SLUI 4' and press Enter.\n3. Select your country and click Next.\n4. Call the toll-free number and follow instructions to activate.",
-                        price: "$9.71", 
-                        cutPrice: "$50" 
-                    },
-                    { 
-                        id: "v11_ent_retail", 
-                        name: "Microsoft Windows 11 Enterprise Retail (Lifetime License / Global)", 
-                        sub: "Business Edition", 
-                        desc: "Enterprise Retail License for business environments. Includes advanced security features and IT management tools.", 
-                        activation: "ACTIVATION INSTRUCTIONS:\n\nDownload link: https://www.microsoft.com/software-download/windows11\n\nMethod 1 (Online Activation):\n1. Go to Settings.\n2. Find 'Activation'.\n3. Select 'Activate' or 'Change Product Key'.\n4. Insert the purchased key.\n5. Windows 11 Enterprise is operational.\n\nMethod 2 (Phone Activation):\n1. Go to Settings -> Update & Security -> Activation.\n2. Choose 'Activate by phone'.\n3. Select your country from the dropdown and click Next.\n4. Call the toll-free number and follow instructions to generate a confirmation ID.\n\nMethod 3 (SLUI Command):\n1. Press Windows key + R.\n2. Type 'SLUI 4' and press Enter.\n3. Select your country and click Next.\n4. Call the toll-free number and follow instructions to activate.",
-                        price: "$19.15", 
-                        cutPrice: "$100" 
-                    }
+                    { id: "v11_pro_retail", name: "Microsoft Windows 11 Pro Retail (Lifetime License / Global)", sub: "Transferable License", desc: "Official Windows 11 Pro Retail key. Can be linked directly to your Microsoft Account.", activation: "", price: "$16.20", cutPrice: "$80" },
+                    { id: "v11_pro_oem", name: "Microsoft Windows 11 Pro OEM (Lifetime License / Global)", sub: "Single PC / Hardware Bound", desc: "Official Windows 11 Pro OEM key. Binds permanently to your motherboard.", activation: "", price: "$11.60", cutPrice: "$60" },
+                    { id: "v11_home_oem", name: "Microsoft Windows 11 Home OEM (Lifetime License / Global)", sub: "Single PC / Home License", desc: "Official Windows 11 Home Edition key for personal/home PCs.", activation: "", price: "$9.71", cutPrice: "$50" },
+                    { id: "v11_ent_retail", name: "Microsoft Windows 11 Enterprise Retail (Lifetime License / Global)", sub: "Business Edition", desc: "Enterprise Retail License for business environments.", activation: "", price: "$19.15", cutPrice: "$100" }
                 ]
             },
             {
@@ -739,45 +675,13 @@
                 price: "$15.02",
                 cutPrice: "$70",
                 badge: "⚡ TOP VALUE",
-                description: "Official Microsoft Windows 10 Pro Retail (Lifetime License / Global). Transferable key bound with Microsoft Account.",
-                activation: "ACTIVATION INSTRUCTIONS:\n\nDownload link: https://www.microsoft.com/en-us/software-download/windows10\n\nMethod 1 (Online Activation):\n1. Go to Settings.\n2. Find 'Activation'.\n3. Select 'Activate' or 'Change Product Key'.\n4. Insert the purchased key.\n5. Windows 10 Pro is operational.\n\nMethod 2 (Phone Activation):\n1. Go to Settings -> Update & Security -> Activation.\n2. Choose 'Activate by phone'.\n3. Select your country from the dropdown and click Next.\n4. Call the toll-free number and follow instructions to generate a confirmation ID.\n\nMethod 3 (SLUI Command):\n1. Press Windows key + R.\n2. Type 'SLUI 4' and press Enter.\n3. Select your country and click Next.\n4. Call the toll-free number and follow instructions to activate.",
+                description: "Official Microsoft Windows 10 Pro Retail (Lifetime License / Global).",
+                activation: "ACTIVATION INSTRUCTIONS:\n\nDownload link: https://www.microsoft.com/en-us/software-download/windows10\n\n1. Go to Settings.\n2. Find 'Activation'.\n3. Select 'Activate' or 'Change Product Key'.\n4. Insert the purchased key.",
                 variants: [
-                    { 
-                        id: "v10_pro_retail", 
-                        name: "Windows 10 Pro Retail (Lifetime / Global)", 
-                        sub: "Transferable License", 
-                        desc: "Official Windows 10 Pro Retail key. Reinstallable and transferable key linked to your Microsoft account.", 
-                        activation: "ACTIVATION INSTRUCTIONS:\n\nDownload link: https://www.microsoft.com/en-us/software-download/windows10\n\nMethod 1 (Online Activation):\n1. Go to Settings.\n2. Find 'Activation'.\n3. Select 'Activate' or 'Change Product Key'.\n4. Insert the purchased key.\n5. Windows 10 Pro is operational.\n\nMethod 2 (Phone Activation):\n1. Go to Settings -> Update & Security -> Activation.\n2. Choose 'Activate by phone'.\n3. Select your country from the dropdown and click Next.\n4. Call the toll-free number and follow instructions to generate a confirmation ID.\n\nMethod 3 (SLUI Command):\n1. Press Windows key + R.\n2. Type 'SLUI 4' and press Enter.\n3. Select your country and click Next.\n4. Call the toll-free number and follow instructions to activate.",
-                        price: "$15.02", 
-                        cutPrice: "$70" 
-                    },
-                    { 
-                        id: "v10_pro_oem", 
-                        name: "Windows 10 Pro OEM (Lifetime / Global)", 
-                        sub: "Single Motherboard Bound", 
-                        desc: "Official Windows 10 Pro OEM license. Binds directly to single motherboard for cost-effective lifetime activation.", 
-                        activation: "ACTIVATION INSTRUCTIONS:\n\nDownload link: https://www.microsoft.com/en-us/software-download/windows10\n\nMethod 1 (Online Activation):\n1. Go to Settings.\n2. Find 'Activation'.\n3. Select 'Activate' or 'Change Product Key'.\n4. Insert the purchased key.\n5. Windows 10 Pro is operational.\n\nMethod 2 (Phone Activation):\n1. Go to Settings -> Update & Security -> Activation.\n2. Choose 'Activate by phone'.\n3. Select your country from the dropdown and click Next.\n4. Call the toll-free number and follow instructions to generate a confirmation ID.\n\nMethod 3 (SLUI Command):\n1. Press Windows key + R.\n2. Type 'SLUI 4' and press Enter.\n3. Select your country and click Next.\n4. Call the toll-free number and follow instructions to activate.",
-                        price: "$10.30", 
-                        cutPrice: "$50" 
-                    },
-                    { 
-                        id: "v10_home_oem", 
-                        name: "Windows 10 Home OEM (Lifetime / Global)", 
-                        sub: "Single PC Activation", 
-                        desc: "Official Windows 10 Home OEM license key for 1 personal computer.", 
-                        activation: "ACTIVATION INSTRUCTIONS:\n\nDownload link: https://www.microsoft.com/en-us/software-download/windows10\n\nMethod 1 (Online Activation):\n1. Go to Settings.\n2. Find 'Activation'.\n3. Select 'Activate' or 'Change Product Key'.\n4. Insert the purchased key.\n5. Windows 10 Home is operational.\n\nMethod 2 (Phone Activation):\n1. Go to Settings -> Update & Security -> Activation.\n2. Choose 'Activate by phone'.\n3. Select your country from the dropdown and click Next.\n4. Call the toll-free number and follow instructions to generate a confirmation ID.\n\nMethod 3 (SLUI Command):\n1. Press Windows key + R.\n2. Type 'SLUI 4' and press Enter.\n3. Select your country and click Next.\n4. Call the toll-free number and follow instructions to activate.",
-                        price: "$8.53", 
-                        cutPrice: "$40" 
-                    },
-                    { 
-                        id: "v10_pro_n_retail", 
-                        name: "Windows 10 Pro N Retail (Lifetime / Global)", 
-                        sub: "Europe N Edition", 
-                        desc: "Windows 10 Pro N Edition key designed without preinstalled media features (European version).", 
-                        activation: "ACTIVATION INSTRUCTIONS:\n\nDownload link: https://www.microsoft.com/en-us/software-download/windows10\n\nMethod 1 (Online Activation):\n1. Go to Settings.\n2. Find 'Activation'.\n3. Select 'Activate' or 'Change Product Key'.\n4. Insert the purchased key.\n5. Windows 10 Pro N is operational.\n\nMethod 2 (Phone Activation):\n1. Go to Settings -> Update & Security -> Activation.\n2. Choose 'Activate by phone'.\n3. Select your country from the dropdown and click Next.\n4. Call the toll-free number and follow instructions to generate a confirmation ID.\n\nMethod 3 (SLUI Command):\n1. Press Windows key + R.\n2. Type 'SLUI 4' and press Enter.\n3. Select your country and click Next.\n4. Call the toll-free number and follow instructions to activate.",
-                        price: "$9.60", 
-                        cutPrice: "$45" 
-                    }
+                    { id: "v10_pro_retail", name: "Windows 10 Pro Retail (Lifetime / Global)", sub: "Transferable License", desc: "Official Windows 10 Pro Retail key.", activation: "", price: "$15.02", cutPrice: "$70" },
+                    { id: "v10_pro_oem", name: "Windows 10 Pro OEM (Lifetime / Global)", sub: "Single Motherboard Bound", desc: "Official Windows 10 Pro OEM license.", activation: "", price: "$10.30", cutPrice: "$50" },
+                    { id: "v10_home_oem", name: "Windows 10 Home OEM (Lifetime / Global)", sub: "Single PC Activation", desc: "Official Windows 10 Home OEM license key.", activation: "", price: "$8.53", cutPrice: "$40" },
+                    { id: "v10_pro_n_retail", name: "Windows 10 Pro N Retail (Lifetime / Global)", sub: "Europe N Edition", desc: "Windows 10 Pro N Edition key without preinstalled media features.", activation: "", price: "$9.60", cutPrice: "$45" }
                 ]
             },
             {
@@ -790,27 +694,11 @@
                 price: "$25",
                 cutPrice: "$120",
                 badge: "⭐ BEST VALUE",
-                description: "Full suite containing Word, Excel, PowerPoint, Outlook, Access, and Publisher. Windows 10 & 11 only — not compatible with macOS, Android, ChromeOS, or iOS.",
-                activation: "ACTIVATION INSTRUCTIONS:\n\nUnlike other websites, our code works on the OFFICIAL activation website: https://setup.office.com/redeem/enter-key\n\n1. Sign in with your Microsoft account (or create one).\n2. Enter your product key to redeem and bind the license to your account.\n3. Download the official installer from your account dashboard.\n4. Open any Office app (e.g. Word) and sign in with the same account to activate.",
+                description: "Full suite containing Word, Excel, PowerPoint, Outlook, Access, and Publisher. Windows 10 & 11 only.",
+                activation: "ACTIVATION INSTRUCTIONS:\n\nOfficial activation website: https://setup.office.com/redeem/enter-key\n\n1. Sign in with your Microsoft account.\n2. Enter your product key to redeem.\n3. Download the official installer.\n4. Open any Office app and sign in to activate.",
                 variants: [
-                    { 
-                        id: "off21_bind", 
-                        name: "Office 2021 Pro Plus - Account Bind", 
-                        sub: "Lifetime Reinstallable License", 
-                        desc: "Binds directly to your official setup.office.com Microsoft Account. Reinstallable on new devices anytime.", 
-                        activation: "ACTIVATION INSTRUCTIONS:\n\nUnlike other websites, our code works on the OFFICIAL activation website: https://setup.office.com/redeem/enter-key\n\n1. Sign in with your Microsoft account (or create one).\n2. Enter your product key to redeem and bind the license to your account.\n3. Download the official installer from your account dashboard.\n4. Open any Office app (e.g. Word) and sign in with the same account to activate.",
-                        price: "$25", 
-                        cutPrice: "$120" 
-                    },
-                    { 
-                        id: "off21_phone", 
-                        name: "Office 2021 Pro Plus - Phone Key", 
-                        sub: "Single Machine Activation", 
-                        desc: "Phone activation key for Office 2021 Pro Plus on a single PC. High discount value option.", 
-                        activation: "ACTIVATION INSTRUCTIONS:\n\nDownload link (official installer): https://officecdn.microsoft.com/pr/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/ProPlus2021Retail.img\n\n1. Right-click the downloaded .img file and select 'Mount' to open it as a virtual drive.\n2. Run Setup.exe to install Office.\n3. Open any Office app (e.g. Word) and enter your product key when prompted.\n4. In the activation wizard, choose 'I want to activate the software by telephone'.\n5. Select your country/region and call the toll-free number provided.\n6. Follow the automated prompts to receive a Confirmation ID.\n7. Enter the Confirmation ID into the activation wizard to finish activation.",
-                        price: "$15", 
-                        cutPrice: "$90" 
-                    }
+                    { id: "off21_bind", name: "Office 2021 Pro Plus - Account Bind", sub: "Lifetime Reinstallable License", desc: "Binds directly to your Microsoft Account.", activation: "", price: "$25", cutPrice: "$120" },
+                    { id: "off21_phone", name: "Office 2021 Pro Plus - Phone Key", sub: "Single Machine Activation", desc: "Phone activation key for Office 2021 Pro Plus.", activation: "", price: "$15", cutPrice: "$90" }
                 ]
             },
             {
@@ -824,26 +712,10 @@
                 cutPrice: "$90",
                 badge: "🛡️ TOP SECURITY",
                 description: "Comprehensive multi-device antivirus suite with Identity Protection, Unlimited VPN, and Safe Browsing.",
-                activation: "ACTIVATION INSTRUCTIONS:\nVisit the official McAfee website:\nhttps://www.mcafee.com/consumer/en-us/ipz/r2d/flows/retailredemption.html\n\n1-Enter your 25-digit activation code.\n2-Log in to your existing account or create a new one.\n3-Download and activate the software, unlocking robust protection for your PC.\n\nCodes can be redeemed worldwide. Region can easily be adjusted in your McAfee panel after redemption.",
+                activation: "ACTIVATION INSTRUCTIONS:\nVisit: https://www.mcafee.com/consumer/en-us/ipz/r2d/flows/retailredemption.html\n\n1. Enter your 25-digit activation code.\n2. Log in or create an account.\n3. Download and activate.",
                 variants: [
-                    { 
-                        id: "mca_5dev", 
-                        name: "McAfee Total Protection 1 Year / 5 Devices", 
-                        sub: "Windows, Mac, iOS, Android", 
-                        desc: "Comprehensive 1-Year security coverage for up to 5 devices (PC, Mac, Mobile) with antivirus, Secure VPN, identity monitoring, and password manager.", 
-                        activation: "ACTIVATION INSTRUCTIONS:\nVisit official website: https://www.mcafee.com/consumer/en-us/ipz/r2d/flows/retailredemption.html\n\n1. Enter your 25-digit activation code.\n2. Log in to your existing account or create a new one.\n3. Download client installer to protect all 5 devices.\n\nCodes can be redeemed worldwide; region can be changed in your McAfee panel after redemption.",
-                        price: "$21.12", 
-                        cutPrice: "$90" 
-                    },
-                    { 
-                        id: "mca_1dev", 
-                        name: "McAfee AntiVirus Protection 1 Year / 1 PC", 
-                        sub: "Single Device License", 
-                        desc: "Single device 1-Year antivirus protection for Windows PC with real-time scanning, device security, and web protection.", 
-                        activation: "ACTIVATION INSTRUCTIONS:\nVisit official website: https://www.mcafee.com/consumer/en-us/ipz/r2d/flows/retailredemption.html\n\n1. Enter your 25-digit activation code.\n2. Log in to your existing account or create a new one.\n3. Download and activate the software, unlocking a year of robust protection for your PC.\n\nCodes can be redeemed worldwide; region can be changed in your McAfee panel after redemption.",
-                        price: "$16.21", 
-                        cutPrice: "$55" 
-                    }
+                    { id: "mca_5dev", name: "McAfee Total Protection 1 Year / 5 Devices", sub: "Windows, Mac, iOS, Android", desc: "1-Year coverage for up to 5 devices.", activation: "", price: "$21.12", cutPrice: "$90" },
+                    { id: "mca_1dev", name: "McAfee AntiVirus Protection 1 Year / 1 PC", sub: "Single Device License", desc: "Single device 1-Year antivirus protection.", activation: "", price: "$16.21", cutPrice: "$55" }
                 ]
             },
             {
@@ -856,18 +728,10 @@
                 price: "$59.27",
                 cutPrice: "$120",
                 badge: "🆕 NEW ARRIVAL",
-                description: "Award-winning antivirus with advanced heuristics technology, Anti-Phishing protection, and Exploit Blocker — trusted by 110+ million users worldwide. Compatible with Windows and Mac.",
-                activation: "ACTIVATION INSTRUCTIONS:\n1. Download the ESET client: https://www.eset.com/us/home/free-trial/\n2. Open the software and enter your activation code.\n3. Optional: Click 'ESET HOME account' and select 'Connect to ESET HOME' to manage your license online.\n\nActivate the code immediately after purchase, as the license duration starts from the moment of purchase.",
+                description: "Award-winning antivirus with advanced heuristics technology, Anti-Phishing protection, and Exploit Blocker.",
+                activation: "ACTIVATION INSTRUCTIONS:\n1. Download: https://www.eset.com/us/home/free-trial/\n2. Open the software and enter your activation code.\n3. Optional: Connect to ESET HOME to manage your license.",
                 variants: [
-                    { 
-                        id: "eset_5dev", 
-                        name: "ESET NOD32 Antivirus 1 Year / 5 Devices", 
-                        sub: "Windows & Mac Compatible", 
-                        desc: "Award-winning NOD32 Antivirus with advanced heuristics technology, Anti-Phishing module, and Exploit Blocker for up to 5 devices over 1 year.", 
-                        activation: "ACTIVATION INSTRUCTIONS:\n1. Download the ESET client: https://www.eset.com/us/home/free-trial/\n2. Open the software and enter your activation code.\n3. Optional: Click 'ESET HOME account' and select 'Connect to ESET HOME' to manage your license online.\n\nActivate the code immediately after purchase, as the license duration starts from the moment of purchase.",
-                        price: "$59.27", 
-                        cutPrice: "$120" 
-                    }
+                    { id: "eset_5dev", name: "ESET NOD32 Antivirus 1 Year / 5 Devices", sub: "Windows & Mac Compatible", desc: "NOD32 Antivirus for up to 5 devices over 1 year.", activation: "", price: "$59.27", cutPrice: "$120" }
                 ]
             },
             {
@@ -880,37 +744,27 @@
                 price: "$28",
                 cutPrice: "$150",
                 badge: "💼 BUSINESS PICK",
-                description: "Official Windows Server 2022 Standard license for small-to-medium business infrastructure with virtualization support.",
-                activation: "ACTIVATION INSTRUCTIONS:\n\n1. Download the evaluation ISO: https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022\n2. Mount/install the ISO and boot into Windows Server 2022.\n3. Open Command Prompt as Administrator and run:\nDISM /online /Set-Edition:ServerStandard /ProductKey:YOUR-KEY-HERE /AcceptEula\n4. The server will convert the image and restart twice (this may take a while).\n5. After restart, go to Settings -> Activation -> Change product key and re-enter your key to confirm activation.",
+                description: "Official Windows Server 2022 Standard license for small-to-medium business infrastructure.",
+                activation: "ACTIVATION INSTRUCTIONS:\n1. Download ISO: https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022\n2. Install and boot Windows Server 2022.\n3. Run: DISM /online /Set-Edition:ServerStandard /ProductKey:YOUR-KEY /AcceptEula\n4. Restart and confirm activation.",
                 variants: [
-                    { 
-                        id: "server22_std", 
-                        name: "Windows Server 2022 Standard (Lifetime / Global)", 
-                        sub: "16-Core License", 
-                        desc: "Official Windows Server 2022 Standard key, licensed for up to 16 cores with 2 virtual machine instances.", 
-                        activation: "ACTIVATION INSTRUCTIONS:\n\n1. Download the evaluation ISO: https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022\n2. Mount/install the ISO and boot into Windows Server 2022.\n3. Open Command Prompt as Administrator and run:\nDISM /online /Set-Edition:ServerStandard /ProductKey:YOUR-KEY-HERE /AcceptEula\n4. The server will convert the image and restart twice (this may take a while).\n5. After restart, go to Settings -> Activation -> Change product key and re-enter your key to confirm activation.",
-                        price: "$28", 
-                        cutPrice: "$150" 
-                    },
-                    { 
-                        id: "server22_dc", 
-                        name: "Windows Server 2022 Datacenter (Lifetime / Global)", 
-                        sub: "Unlimited Virtualization", 
-                        desc: "Datacenter edition with unlimited virtual machine instances, ideal for larger infrastructure needs.", 
-                        activation: "ACTIVATION INSTRUCTIONS:\n\n1. Download the evaluation ISO: https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022\n2. Mount/install the ISO and boot into Windows Server 2022.\n3. Open Command Prompt as Administrator and run:\nDISM /online /Set-Edition:ServerDatacenter /ProductKey:YOUR-KEY-HERE /AcceptEula\n4. The server will convert the image and restart twice (this may take a while).\n5. After restart, go to Settings -> Activation -> Change product key and re-enter your key to confirm activation.",
-                        price: "$45", 
-                        cutPrice: "$220" 
-                    }
+                    { id: "server22_std", name: "Windows Server 2022 Standard (Lifetime / Global)", sub: "16-Core License", desc: "Windows Server 2022 Standard key, up to 16 cores.", activation: "", price: "$28", cutPrice: "$150" },
+                    { id: "server22_dc", name: "Windows Server 2022 Datacenter (Lifetime / Global)", sub: "Unlimited Virtualization", desc: "Datacenter edition with unlimited VM instances.", activation: "", price: "$45", cutPrice: "$220" }
                 ]
             }
         ];
 
-        let products = initialProducts;
+        // Fill in activation text for variants missing it
+        initialProducts.forEach(p => {
+            (p.variants || []).forEach(v => { if (!v.activation) v.activation = p.activation; });
+        });
+
+        // ================= STATE =================
+        let products = initialProducts.slice();
         let activeCategory = 'all';
         let currentModalProductId = null;
         let selectedVariantId = null;
-        // Real admin gate: Supabase Auth session, not a client-side flag.
         let isAdminLoggedIn = false;
+        let sb = null; // Supabase client (may be null)
 
         let storeSettings = {
             email: "support@techverca.com",
@@ -920,106 +774,108 @@
             desc: "Providing authentic, official software licenses with instant automated delivery and lifetime activation support."
         };
 
-        // Supabase Configuration
         const SUPABASE_URL = "https://ldwktjodwfvyynjemzzc.supabase.co";
         const SUPABASE_ANON_KEY = "sb_publishable_4T751KfPgKJybm8owvsoRg_o707OhsZ";
-        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-        alert("SCRIPT STARTED RUNNING - TEST 2 (Supabase client created)");
 
-        // Load products (each row: id = product id, data = jsonb product object)
+        // ================= SAFE SUPABASE INIT =================
+        function initSupabase() {
+            try {
+                if (!window.supabase || typeof window.supabase.createClient !== 'function') {
+                    console.warn("[TechVerca] Supabase SDK load nahi hua — local mode me chal raha hai.");
+                    return null;
+                }
+                return window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+            } catch (e) {
+                console.error("[TechVerca] Supabase init fail:", e);
+                return null;
+            }
+        }
+
+        // ================= SUPABASE LOADERS =================
         async function loadProducts() {
-            const { data: rows, error } = await supabase.from('products').select('*');
-            if (error) {
-                alert("LOAD PRODUCTS ERROR:\n" + error.message + "\n\nCode: " + (error.code || 'none') + "\nDetails: " + (error.details || 'none'));
-                console.error("Error loading products:", error);
-                products = initialProducts;
-                renderProducts();
-                return;
+            if (!sb) return;
+            try {
+                const { data: rows, error } = await sb.from('products').select('*');
+
+                if (error) {
+                    console.error("[TechVerca] products load error:", error.message, error.code, error.details);
+                    return; // local products already rendered — kuch na karo
+                }
+
+                if (rows && rows.length > 0) {
+                    const remote = rows.map(r => r.data).filter(Boolean);
+                    if (remote.length > 0) {
+                        // Normalize: variants hamesha array ho
+                        remote.forEach(p => { if (!Array.isArray(p.variants)) p.variants = []; });
+                        products = remote;
+                        renderProducts(document.getElementById('productSearch')?.value || '');
+                    }
+                }
+                // rows empty => local catalog hi dikhne do (seed mat karo, RLS block kar sakta hai)
+            } catch (e) {
+                console.error("[TechVerca] loadProducts exception:", e);
             }
-            if (rows && rows.length > 0) {
-                products = rows.map(r => r.data);
-            } else {
-                products = initialProducts;
-                const seedRows = initialProducts.map(p => ({ id: p.id, data: p }));
-                const { error: seedErr } = await supabase.from('products').insert(seedRows);
-                if (seedErr) alert("SEED PRODUCTS ERROR:\n" + seedErr.message);
-            }
-            renderProducts();
         }
 
-        // Load store settings
         async function loadStoreSettings() {
-            const { data: row, error } = await supabase.from('store_settings').select('*').eq('id', 'main').maybeSingle();
-            if (error) {
-                alert("LOAD SETTINGS ERROR:\n" + error.message + "\n\nCode: " + (error.code || 'none'));
-                console.error("Error loading settings:", error);
-                applyStoreSettingsUI();
-                return;
-            }
-            if (row && row.data) {
-                storeSettings = row.data;
-            } else {
-                const { error: seedErr } = await supabase.from('store_settings').upsert({ id: 'main', data: storeSettings });
-                if (seedErr) console.error("Error seeding settings:", seedErr);
-            }
-            applyStoreSettingsUI();
-            if (isAdminLoggedIn) {
-                const emailEl = document.getElementById('admin_email');
-                const phoneEl = document.getElementById('admin_phone');
-                const chatEl = document.getElementById('admin_chat_link');
-                const hoursEl = document.getElementById('admin_hours');
-                const descEl = document.getElementById('admin_desc');
-                if (emailEl) emailEl.value = storeSettings.email;
-                if (phoneEl) phoneEl.value = storeSettings.phone;
-                if (chatEl) chatEl.value = storeSettings.chatLink;
-                if (hoursEl) hoursEl.value = storeSettings.hours;
-                if (descEl) descEl.value = storeSettings.desc;
+            if (!sb) return;
+            try {
+                const { data: row, error } = await sb.from('store_settings').select('*').eq('id', 'main').maybeSingle();
+                if (error) {
+                    console.error("[TechVerca] settings load error:", error.message);
+                    return;
+                }
+                if (row && row.data) {
+                    storeSettings = Object.assign({}, storeSettings, row.data);
+                    applyStoreSettingsUI();
+                }
+            } catch (e) {
+                console.error("[TechVerca] loadStoreSettings exception:", e);
             }
         }
 
-        // REAL security gate: only a signed-in Supabase user is treated as admin.
-        // Backed by Row Level Security policies (set via SQL Editor) which reject
-        // writes from anyone who isn't authenticated.
-        supabase.auth.onAuthStateChange((event, session) => {
-            isAdminLoggedIn = !!session;
-            if (isAdminLoggedIn) {
-                closeAdminLoginModal();
-                showAdminElements();
-            } else {
-                hideAdminElements();
-            }
-        });
-
-        supabase.auth.getSession().then(({ data: { session } }) => {
-            isAdminLoggedIn = !!session;
-            if (isAdminLoggedIn) showAdminElements();
-        });
-
-        // Realtime sync: refresh data whenever any row changes
-        supabase
-            .channel('products-changes')
-            .on('postgres_changes', { event: '*', schema: 'public', table: 'products' }, () => {
-                loadProducts();
-            })
-            .subscribe();
-
-        supabase
-            .channel('settings-changes')
-            .on('postgres_changes', { event: '*', schema: 'public', table: 'store_settings' }, () => {
-                loadStoreSettings();
-            })
-            .subscribe();
-
+        // ================= BOOT =================
         document.addEventListener('DOMContentLoaded', () => {
-            alert("SCRIPT STARTED RUNNING - TEST 3 (DOMContentLoaded fired)");
-            loadProducts();
-            loadStoreSettings();
+            // 1) INSTANT RENDER — network ka intezaar nahi
+            products = initialProducts.slice();
+            renderProducts();
+            applyStoreSettingsUI();
             startCountdown(13, 11);
             setInterval(showSalesPopup, 10000);
             initKeyForge();
+
+            // 2) Supabase (optional upgrade)
+            sb = initSupabase();
+            if (!sb) return;
+
+            sb.auth.onAuthStateChange((event, session) => {
+                isAdminLoggedIn = !!session;
+                if (isAdminLoggedIn) { closeAdminLoginModal(); showAdminElements(); }
+                else { hideAdminElements(); }
+            });
+
+            sb.auth.getSession().then(({ data: { session } }) => {
+                isAdminLoggedIn = !!session;
+                if (isAdminLoggedIn) showAdminElements();
+            }).catch(e => console.error(e));
+
+            loadProducts();
+            loadStoreSettings();
+
+            try {
+                sb.channel('products-changes')
+                    .on('postgres_changes', { event: '*', schema: 'public', table: 'products' }, () => loadProducts())
+                    .subscribe();
+
+                sb.channel('settings-changes')
+                    .on('postgres_changes', { event: '*', schema: 'public', table: 'store_settings' }, () => loadStoreSettings())
+                    .subscribe();
+            } catch (e) {
+                console.error("[TechVerca] realtime subscribe fail:", e);
+            }
         });
 
-        // Signature hero animation: generates a plausible-looking license key with a "locking in" effect
+        // ================= KEY FORGE =================
         function initKeyForge() {
             const el = document.getElementById('keyForgeDisplay');
             const dotEl = document.getElementById('keyForgeDot');
@@ -1056,13 +912,12 @@
             }, 90);
         }
 
-        // DRAWER CONTROLS
+        // ================= DRAWER =================
         function openNavDrawer() {
             document.getElementById('navDrawer').classList.remove('-translate-x-full');
             document.getElementById('drawerBackdrop').classList.remove('hidden');
             document.body.classList.add('modal-active');
         }
-
         function closeNavDrawer() {
             document.getElementById('navDrawer').classList.add('-translate-x-full');
             document.getElementById('drawerBackdrop').classList.add('hidden');
@@ -1072,6 +927,7 @@
         function startCountdown(minutes, seconds) {
             let totalSeconds = minutes * 60 + seconds;
             const timerElement = document.getElementById('countdown');
+            if (!timerElement) return;
             setInterval(() => {
                 if (totalSeconds <= 0) totalSeconds = 15 * 60;
                 totalSeconds--;
@@ -1101,18 +957,18 @@
                     <i class="fas fa-shopping-bag"></i>
                 </div>
                 <div class="text-[11px]">
-                    <p class="font-bold text-slate-900">${order.name} <span class="text-slate-400 font-normal">(${order.city})</span></p>
-                    <p class="text-slate-500">Bought <span class="text-blue-600 font-bold">${order.item}</span></p>
-                    <p class="text-[9px] text-slate-400 flex items-center mt-0.5"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-1 inline-block"></span> ${order.time} • Verified Order</p>
+                    <p class="font-bold text-slate-900">${escapeHtml(order.name)} <span class="text-slate-400 font-normal">(${escapeHtml(order.city)})</span></p>
+                    <p class="text-slate-500">Bought <span class="text-blue-600 font-bold">${escapeHtml(order.item)}</span></p>
+                    <p class="text-[9px] text-slate-400 flex items-center mt-0.5"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-1 inline-block"></span> ${escapeHtml(order.time)} • Verified Order</p>
                 </div>
             `;
             document.body.appendChild(popup);
-            setTimeout(() => { if(popup) popup.remove(); }, 4000);
+            setTimeout(() => { if (popup) popup.remove(); }, 4000);
         }
 
-        // Security: escape HTML special characters before inserting any text into innerHTML
+        // ================= HELPERS =================
         function escapeHtml(text) {
-            if (!text) return '';
+            if (text === null || text === undefined) return '';
             return String(text)
                 .replace(/&/g, '&amp;')
                 .replace(/</g, '&lt;')
@@ -1122,35 +978,33 @@
         }
 
         function formatTextWithLinks(text) {
-            if(!text) return '';
+            if (!text) return '';
             const safeText = escapeHtml(text);
             const urlRegex = /(https?:\/\/[^\s]+)/g;
-            return safeText.replace(urlRegex, function(url) {
+            return safeText.replace(urlRegex, function (url) {
                 return `<a href="${url}" target="_blank" class="text-blue-600 underline hover:text-blue-800 break-all">${url}</a>`;
             }).replace(/\n/g, '<br>');
         }
 
-        // Category-based visual styling (gradient + icon color) used when no real
-        // product photo is set, or as a graceful fallback if the photo fails to load.
-        function getCategoryVisualStyle(category) {
-            const styles = {
-                os: { gradient: 'from-blue-600 to-blue-800', iconColor: 'text-white' },
-                office: { gradient: 'from-orange-500 to-rose-600', iconColor: 'text-white' },
-                antivirus: { gradient: 'from-emerald-500 to-emerald-700', iconColor: 'text-white' }
-            };
-            return styles[category] || { gradient: 'from-slate-600 to-slate-800', iconColor: 'text-white' };
-        }
-
+        // ================= RENDER =================
         function renderProducts(filterQuery = '') {
             const grid = document.getElementById('productsGrid');
             if (!grid) return;
+
+            if (!Array.isArray(products) || products.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-12 text-slate-400 text-xs font-semibold">Catalog load ho raha hai...</div>`;
+                return;
+            }
+
             grid.innerHTML = '';
+            const q = (filterQuery || '').toLowerCase();
 
             const filtered = products.filter(p => {
+                if (!p) return false;
                 const matchesCategory = activeCategory === 'all' || p.category === activeCategory;
-                const safeTitle = (p.title || '').toLowerCase();
-                const safeSub = (p.sub || '').toLowerCase();
-                const matchesSearch = safeTitle.includes(filterQuery.toLowerCase()) || safeSub.includes(filterQuery.toLowerCase());
+                const title = (p.title || '').toLowerCase();
+                const sub = (p.sub || '').toLowerCase();
+                const matchesSearch = title.includes(q) || sub.includes(q);
                 return matchesCategory && matchesSearch;
             });
 
@@ -1168,32 +1022,32 @@
                 const safeSubText = escapeHtml(p.sub);
                 const safeBadgeText = escapeHtml(p.badge);
 
-                const badgeHTML = p.badge ? `<span class="absolute top-2 right-2 bg-amber-500 text-slate-950 font-black text-[8px] px-2 py-0.5 rounded-full uppercase tracking-wider z-10 shadow-sm">${safeBadgeText}</span>` : '';
+                const badgeHTML = p.badge
+                    ? `<span class="absolute top-2 right-2 bg-amber-500 text-slate-950 font-black text-[8px] px-2 py-0.5 rounded-full uppercase tracking-wider z-10 shadow-sm">${safeBadgeText}</span>`
+                    : '';
 
-                const imageOrVisual = p.imageUrl ? 
+                const imageOrVisual = p.imageUrl ?
                     `<div class="w-full h-32 bg-slate-900 rounded-xl mb-3 flex items-center justify-center p-1 overflow-hidden relative">
-                        <img src="${p.imageUrl}" class="w-full h-full object-contain rounded-lg" alt="${safeTitleText}" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');">
+                        <img src="${escapeHtml(p.imageUrl)}" class="w-full h-full object-contain rounded-lg" alt="${safeTitleText}" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');">
                         <div class="text-slate-700 text-4xl hidden"><i class="${p.icon || 'fa-solid fa-box'}"></i></div>
                      </div>` :
                     `<div class="w-full h-32 bg-slate-100 rounded-xl mb-3 flex items-center justify-center text-slate-400 text-4xl"><i class="${p.icon || 'fa-solid fa-box'}"></i></div>`;
 
-                const displayPrice = p.variants && p.variants.length > 0 ? p.variants[0].price : p.price;
-                const displayCutPrice = p.variants && p.variants.length > 0 ? p.variants[0].cutPrice : p.cutPrice;
+                const hasVariants = Array.isArray(p.variants) && p.variants.length > 0;
+                const displayPrice = hasVariants ? p.variants[0].price : p.price;
+                const displayCutPrice = hasVariants ? p.variants[0].cutPrice : p.cutPrice;
 
                 let versionsHTML = '';
-                if (p.variants && p.variants.length > 0) {
+                if (hasVariants) {
                     const variantTags = p.variants.map(v => {
-                        const label = escapeHtml((v.name || '').replace(p.title, '').replace('-', '').trim() || 'Standard');
+                        const label = escapeHtml((v.name || '').replace(p.title || '', '').replace('-', '').trim() || 'Standard');
                         return `<span class="bg-slate-100 border border-slate-200 text-slate-700 text-[9px] font-bold px-2 py-0.5 rounded-md">${label}</span>`;
                     }).join('');
                     versionsHTML = `
                         <div class="my-2">
                             <p class="text-[9px] font-bold text-slate-400 uppercase tracking-wider mb-1">Available Editions (${p.variants.length}):</p>
-                            <div class="flex flex-wrap gap-1">
-                                ${variantTags}
-                            </div>
-                        </div>
-                    `;
+                            <div class="flex flex-wrap gap-1">${variantTags}</div>
+                        </div>`;
                 }
 
                 card.innerHTML = `
@@ -1201,7 +1055,7 @@
                     <div>
                         ${imageOrVisual}
                         <div class="flex items-center justify-between mb-1">
-                            <span class="text-[9px] font-bold text-blue-600 tracking-wider uppercase">${escapeHtml(p.category)}</span>
+                            <span class="text-[9px] font-bold text-blue-600 tracking-wider uppercase">${escapeHtml(p.category || '')}</span>
                             <span class="text-[9px] font-bold text-emerald-600 flex items-center"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-1"></span> In Stock</span>
                         </div>
                         <h3 class="font-display text-xs font-bold text-slate-900 leading-snug mt-0.5 mb-1">${safeTitleText}</h3>
@@ -1210,8 +1064,8 @@
                     </div>
                     <div class="pt-2 border-t border-slate-100 mt-2">
                         <div class="flex items-baseline space-x-1.5 mb-2">
-                            <span class="text-base font-black text-slate-900">${escapeHtml(displayPrice)}</span>
-                            <span class="text-xs line-through text-slate-400 font-medium">${escapeHtml(displayCutPrice)}</span>
+                            <span class="text-base font-black text-slate-900">${escapeHtml(displayPrice || '')}</span>
+                            <span class="text-xs line-through text-slate-400 font-medium">${escapeHtml(displayCutPrice || '')}</span>
                         </div>
                         <button onclick="event.stopPropagation(); openProductModal('${p.id}')" class="w-full bg-slate-900 hover:bg-blue-600 text-white font-bold text-[10px] py-2 rounded-xl transition flex items-center justify-center">
                             View License Options
@@ -1229,14 +1083,14 @@
             });
             const activeBtn = document.getElementById(`btn-${cat}`);
             if (activeBtn) activeBtn.className = "category-btn px-5 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition bg-blue-600 text-white shadow-sm";
-            renderProducts(document.getElementById('productSearch').value);
+            renderProducts(document.getElementById('productSearch')?.value || '');
         }
 
         function searchProducts() {
-            const query = document.getElementById('productSearch').value;
-            renderProducts(query);
+            renderProducts(document.getElementById('productSearch').value);
         }
 
+        // ================= PRODUCT MODAL =================
         function openProductModal(productId) {
             currentModalProductId = productId;
             const p = products.find(prod => prod.id === productId);
@@ -1259,10 +1113,11 @@
 
             const container = document.getElementById('licenseSelectorContainer');
             container.innerHTML = '';
-            
-            selectedVariantId = p.variants && p.variants.length > 0 ? p.variants[0].id : null;
 
-            if (p.variants && p.variants.length > 0) {
+            const hasVariants = Array.isArray(p.variants) && p.variants.length > 0;
+            selectedVariantId = hasVariants ? p.variants[0].id : null;
+
+            if (hasVariants) {
                 p.variants.forEach((v, idx) => {
                     const isSelected = idx === 0;
                     const vBox = document.createElement('div');
@@ -1286,7 +1141,7 @@
                 const activeVar = p.variants[0];
                 document.getElementById('tab-desc-content').innerHTML = formatTextWithLinks(activeVar.desc || p.description);
                 document.getElementById('tab-activation-content').innerHTML = formatTextWithLinks(activeVar.activation || p.activation || "Standard automated key redemption via vendor dashboard.");
-                
+
                 document.getElementById('quick_modal_desc').value = activeVar.desc || p.description || '';
                 document.getElementById('quick_modal_activation').value = activeVar.activation || p.activation || '';
                 document.getElementById('quick_modal_real_price').value = activeVar.price;
@@ -1295,7 +1150,7 @@
             } else {
                 document.getElementById('tab-desc-content').innerHTML = formatTextWithLinks(p.description);
                 document.getElementById('tab-activation-content').innerHTML = formatTextWithLinks(p.activation || "Standard automated key redemption via vendor dashboard.");
-                
+
                 document.getElementById('quick_modal_desc').value = p.description || '';
                 document.getElementById('quick_modal_activation').value = p.activation || '';
                 document.getElementById('quick_modal_real_price').value = p.price;
@@ -1313,36 +1168,35 @@
         function selectVariant(vId) {
             selectedVariantId = vId;
             const p = products.find(prod => prod.id === currentModalProductId);
-            if (!p || !p.variants) return;
+            if (!p || !Array.isArray(p.variants)) return;
 
             p.variants.forEach(v => {
                 const card = document.getElementById(`variant-card-${v.id}`);
-                if (card) {
-                    if (v.id === vId) {
-                        card.className = "p-3 rounded-xl border cursor-pointer transition flex justify-between items-center border-blue-600 bg-blue-50/50";
-                        updatePriceDisplay(v.price, v.cutPrice);
-                        document.getElementById('quick_modal_real_price').value = v.price;
-                        document.getElementById('quick_modal_cut_price').value = v.cutPrice;
-                        
-                        const dynamicDesc = v.desc || p.description;
-                        const dynamicActivation = v.activation || p.activation || "Standard automated key redemption via vendor dashboard.";
-                        
-                        document.getElementById('tab-desc-content').innerHTML = formatTextWithLinks(dynamicDesc);
-                        document.getElementById('tab-activation-content').innerHTML = formatTextWithLinks(dynamicActivation);
-                        
-                        document.getElementById('quick_modal_desc').value = dynamicDesc;
-                        document.getElementById('quick_modal_activation').value = dynamicActivation;
-                    } else {
-                        card.className = "p-3 rounded-xl border cursor-pointer transition flex justify-between items-center border-slate-200 bg-white hover:border-slate-300";
-                    }
+                if (!card) return;
+                if (v.id === vId) {
+                    card.className = "p-3 rounded-xl border cursor-pointer transition flex justify-between items-center border-blue-600 bg-blue-50/50";
+                    updatePriceDisplay(v.price, v.cutPrice);
+                    document.getElementById('quick_modal_real_price').value = v.price;
+                    document.getElementById('quick_modal_cut_price').value = v.cutPrice;
+
+                    const dynamicDesc = v.desc || p.description;
+                    const dynamicActivation = v.activation || p.activation || "Standard automated key redemption via vendor dashboard.";
+
+                    document.getElementById('tab-desc-content').innerHTML = formatTextWithLinks(dynamicDesc);
+                    document.getElementById('tab-activation-content').innerHTML = formatTextWithLinks(dynamicActivation);
+
+                    document.getElementById('quick_modal_desc').value = dynamicDesc;
+                    document.getElementById('quick_modal_activation').value = dynamicActivation;
+                } else {
+                    card.className = "p-3 rounded-xl border cursor-pointer transition flex justify-between items-center border-slate-200 bg-white hover:border-slate-300";
                 }
             });
             updateCheckoutLink(p.title);
         }
 
         function updatePriceDisplay(real, cut) {
-            document.getElementById('modalRealPrice').innerText = real;
-            document.getElementById('modalCutPrice').innerText = cut;
+            document.getElementById('modalRealPrice').innerText = real || '';
+            document.getElementById('modalCutPrice').innerText = cut || '';
         }
 
         function updateCheckoutLink(productName) {
@@ -1352,7 +1206,7 @@
             let variantName = "Standard License";
             let price = p.price;
 
-            if (p.variants && p.variants.length > 0) {
+            if (Array.isArray(p.variants) && p.variants.length > 0) {
                 const selectedVar = p.variants.find(v => v.id === selectedVariantId) || p.variants[0];
                 variantName = selectedVar.name;
                 price = selectedVar.price;
@@ -1361,7 +1215,7 @@
             const orderId = 'TV-' + Math.floor(100000 + Math.random() * 900000);
             const dateStr = new Date().toLocaleString('en-US');
 
-            const rawMessage = 
+            const rawMessage =
 `🛒 *NEW ORDER REQUEST - TECHVERCA*
 ----------------------------------
 🆔 *Order Reference:* #${orderId}
@@ -1370,12 +1224,10 @@
 💰 *Price:* ${price}
 ⏰ *Time:* ${dateStr}
 ----------------------------------
-Hello Support, I want to complete my purchase for this license key. Please send payment details and activation instructions.`;
+Hello Support, I want to complete my purchase for this license key.`;
 
             const encodedMessage = encodeURIComponent(rawMessage);
-
             const telegramBtn = document.getElementById('checkoutTelegramLink');
-
             if (telegramBtn) {
                 const baseUrl = storeSettings.chatLink || "https://t.me/+917870320868";
                 telegramBtn.href = `${baseUrl}?text=${encodedMessage}`;
@@ -1409,57 +1261,36 @@ Hello Support, I want to complete my purchase for this license key. Please send 
 
         function toggleFaq(id) {
             const elem = document.getElementById(id);
-            elem.classList.toggle('hidden');
+            if (elem) elem.classList.toggle('hidden');
         }
 
+        // ================= POLICIES =================
         const policyData = {
-            about: {
-                title: "About TechVerca",
-                body: "TechVerca is a global provider of digital retail software licenses. We offer authentic digital keys for operating systems, productivity suites, and enterprise security software with automated 24/7 key generation and instant chat delivery."
-            },
-            return: {
-                title: "Return & Refund Policy",
-                body: "We offer a 100% money-back guarantee within 7 days of purchase if the digital license key provided fails to activate your product and our support team is unable to replace it. Once a key has been successfully validated, it cannot be refunded due to digital asset distribution regulations."
-            },
-            shipping: {
-                title: "Shipping & Instant Delivery",
-                body: "All products sold on TechVerca are digital software keys. No physical media or box is shipped. Keys and vendor ISO download instructions are delivered via Telegram immediately following checkout verification."
-            },
-            terms: {
-                title: "Terms & Conditions",
-                body: "By placing an order on TechVerca, you agree that software keys are intended for usage in accordance with the vendor's original End User License Agreement (EULA). All brand names and trademarks belong to their respective owners."
-            },
-            privacy: {
-                title: "Privacy Policy",
-                body: "We value your personal information. TechVerca does not store payment credentials or credit card details on our servers. Communication data collected during chat support is used exclusively to deliver digital keys and customer assistance."
-            }
+            about: { title: "About TechVerca", body: "TechVerca is a global provider of digital retail software licenses. We offer authentic digital keys for operating systems, productivity suites, and enterprise security software with automated 24/7 key generation and instant chat delivery." },
+            return: { title: "Return & Refund Policy", body: "We offer a 100% money-back guarantee within 7 days of purchase if the digital license key provided fails to activate your product and our support team is unable to replace it. Once a key has been successfully validated, it cannot be refunded due to digital asset distribution regulations." },
+            shipping: { title: "Shipping & Instant Delivery", body: "All products sold on TechVerca are digital software keys. No physical media or box is shipped. Keys and vendor ISO download instructions are delivered via Telegram immediately following checkout verification." },
+            terms: { title: "Terms & Conditions", body: "By placing an order on TechVerca, you agree that software keys are intended for usage in accordance with the vendor's original End User License Agreement (EULA). All brand names and trademarks belong to their respective owners." },
+            privacy: { title: "Privacy Policy", body: "We value your personal information. TechVerca does not store payment credentials or credit card details on our servers. Communication data collected during chat support is used exclusively to deliver digital keys and customer assistance." }
         };
 
         function openPolicy(key) {
             const item = policyData[key];
             if (!item) return;
-
             document.getElementById('policyModalTitle').innerText = item.title;
             document.getElementById('policyModalBody').innerText = item.body;
-
-            const modal = document.getElementById('policyModal');
-            modal.style.display = 'flex';
+            document.getElementById('policyModal').style.display = 'flex';
             document.body.classList.add('modal-active');
         }
 
         function closePolicyModal() {
-            const modal = document.getElementById('policyModal');
-            modal.style.display = 'none';
+            document.getElementById('policyModal').style.display = 'none';
             document.body.classList.remove('modal-active');
         }
 
+        // ================= ADMIN =================
         function toggleAdminPanelDirect() {
-            if (!isAdminLoggedIn) {
-                triggerAdminLogin();
-            } else {
-                const panel = document.getElementById('adminPanel');
-                panel.classList.toggle('hidden');
-            }
+            if (!isAdminLoggedIn) triggerAdminLogin();
+            else document.getElementById('adminPanel').classList.toggle('hidden');
         }
 
         function triggerAdminLogin() {
@@ -1476,6 +1307,7 @@ Hello Support, I want to complete my purchase for this license key. Please send 
         }
 
         async function submitAdminLogin() {
+            if (!sb) { alert("Supabase connect nahi hai."); return; }
             const email = document.getElementById('admin_login_email').value.trim();
             const password = document.getElementById('admin_login_password').value;
             const errorEl = document.getElementById('admin_login_error');
@@ -1493,7 +1325,7 @@ Hello Support, I want to complete my purchase for this license key. Please send 
             btn.classList.add('opacity-70', 'cursor-not-allowed');
             btnText.textContent = "Logging in...";
 
-            const { error } = await supabase.auth.signInWithPassword({ email, password });
+            const { error } = await sb.auth.signInWithPassword({ email, password });
 
             btn.disabled = false;
             btn.classList.remove('opacity-70', 'cursor-not-allowed');
@@ -1503,31 +1335,21 @@ Hello Support, I want to complete my purchase for this license key. Please send 
                 errorEl.textContent = "Login failed: " + error.message;
                 errorEl.classList.remove('hidden');
             }
-            // On success, onAuthStateChange listener handles closing the modal
-            // and revealing the admin panel.
         }
 
         async function adminLogout() {
-            await supabase.auth.signOut();
+            if (sb) await sb.auth.signOut();
             document.getElementById('adminPanel').classList.add('hidden');
         }
 
         function hideAdminElements() {
-            document.getElementById('adminPanel').classList.add('hidden');
-            document.getElementById('adminImageControlBox').classList.add('hidden');
-            document.getElementById('adminPriceControlBox').classList.add('hidden');
-            document.getElementById('adminVariantControlBox').classList.add('hidden');
-            document.getElementById('adminDescControlBox').classList.add('hidden');
-            document.getElementById('adminActivationControlBox').classList.add('hidden');
+            ['adminPanel','adminImageControlBox','adminPriceControlBox','adminVariantControlBox','adminDescControlBox','adminActivationControlBox']
+                .forEach(id => document.getElementById(id)?.classList.add('hidden'));
         }
 
         function showAdminElements() {
-            document.getElementById('adminPanel').classList.remove('hidden');
-            document.getElementById('adminImageControlBox').classList.remove('hidden');
-            document.getElementById('adminPriceControlBox').classList.remove('hidden');
-            document.getElementById('adminVariantControlBox').classList.remove('hidden');
-            document.getElementById('adminDescControlBox').classList.remove('hidden');
-            document.getElementById('adminActivationControlBox').classList.remove('hidden');
+            ['adminPanel','adminImageControlBox','adminPriceControlBox','adminVariantControlBox','adminDescControlBox','adminActivationControlBox']
+                .forEach(id => document.getElementById(id)?.classList.remove('hidden'));
 
             document.getElementById('admin_email').value = storeSettings.email;
             document.getElementById('admin_phone').value = storeSettings.phone;
@@ -1542,6 +1364,7 @@ Hello Support, I want to complete my purchase for this license key. Please send 
 
         async function handleCreateProduct(e) {
             e.preventDefault();
+            if (!sb) { alert("Supabase connect nahi hai."); return; }
             const id = document.getElementById('p_id').value.trim();
 
             if (products.some(prod => prod.id === id)) {
@@ -1559,26 +1382,15 @@ Hello Support, I want to complete my purchase for this license key. Please send 
             const activation = document.getElementById('p_activation').value;
 
             const newProd = {
-                id,
-                title,
-                category,
-                imageUrl,
+                id, title, category, imageUrl,
                 icon: category === 'os' ? 'fa-brands fa-windows' : (category === 'office' ? 'fa-solid fa-file-word' : 'fa-solid fa-shield-alt'),
-                sub,
-                price,
-                cutPrice,
-                description,
-                activation,
-                variants: [
-                    { id: `${id}_default`, name: `${title} - Standard`, sub, desc: description, activation, price, cutPrice }
-                ]
+                sub, price, cutPrice, description, activation,
+                variants: [{ id: `${id}_default`, name: `${title} - Standard`, sub, desc: description, activation, price, cutPrice }]
             };
 
-            const { error } = await supabase.from('products').insert({ id: newProd.id, data: newProd });
-            if (error) {
-                alert("Save FAILED: " + error.message);
-                return;
-            }
+            const { error } = await sb.from('products').insert({ id: newProd.id, data: newProd });
+            if (error) { alert("Save FAILED: " + error.message); return; }
+
             products.push(newProd);
             renderProducts();
             document.getElementById('addProductForm').reset();
@@ -1587,6 +1399,7 @@ Hello Support, I want to complete my purchase for this license key. Please send 
 
         async function saveFooterSettings(e) {
             e.preventDefault();
+            if (!sb) { alert("Supabase connect nahi hai."); return; }
             storeSettings = {
                 email: document.getElementById('admin_email').value,
                 phone: document.getElementById('admin_phone').value,
@@ -1594,63 +1407,54 @@ Hello Support, I want to complete my purchase for this license key. Please send 
                 hours: document.getElementById('admin_hours').value,
                 desc: document.getElementById('admin_desc').value
             };
-            const { error } = await supabase.from('store_settings').upsert({ id: 'main', data: storeSettings });
-            if (error) {
-                alert("Error saving settings: " + error.message);
-            } else {
-                applyStoreSettingsUI();
-                alert("Store settings updated successfully across all devices!");
-            }
+            const { error } = await sb.from('store_settings').upsert({ id: 'main', data: storeSettings });
+            if (error) alert("Error saving settings: " + error.message);
+            else { applyStoreSettingsUI(); alert("Store settings updated successfully!"); }
         }
 
         function applyStoreSettingsUI() {
-            document.getElementById('display_email').innerText = storeSettings.email;
-            document.getElementById('display_email_link').href = `mailto:${storeSettings.email}`;
-            document.getElementById('display_phone').innerText = storeSettings.phone;
-            document.getElementById('display_phone_link').href = storeSettings.chatLink;
-            document.getElementById('display_hours').innerText = storeSettings.hours;
-            document.getElementById('display_desc').innerText = storeSettings.desc;
-            document.getElementById('bottom_chat_link').href = storeSettings.chatLink;
+            const set = (id, val) => { const el = document.getElementById(id); if (el) el.innerText = val; };
+            set('display_email', storeSettings.email);
+            set('display_phone', storeSettings.phone);
+            set('display_hours', storeSettings.hours);
+            set('display_desc', storeSettings.desc);
+
+            const emailLink = document.getElementById('display_email_link');
+            if (emailLink) emailLink.href = `mailto:${storeSettings.email}`;
+            const phoneLink = document.getElementById('display_phone_link');
+            if (phoneLink) phoneLink.href = storeSettings.chatLink;
+            const bottomLink = document.getElementById('bottom_chat_link');
+            if (bottomLink) bottomLink.href = storeSettings.chatLink;
         }
 
+        // ---- Admin inline editors ----
         async function updateModalImageDirect() {
+            if (!sb) return;
             const url = document.getElementById('quick_modal_img_url').value.trim();
-            if (!url) {
-                alert("Pehle Image URL field mein koi URL paste karein.");
-                return;
-            }
-            if (!currentModalProductId) {
-                alert("Koi product select nahi hai. Modal band karke dobara kholein.");
-                return;
-            }
+            if (!url) { alert("Pehle Image URL field mein koi URL paste karein."); return; }
+            if (!currentModalProductId) { alert("Koi product select nahi hai."); return; }
 
             const p = products.find(prod => prod.id === currentModalProductId);
-            if (!p) {
-                alert("Product nahi mila.");
-                return;
-            }
+            if (!p) return;
 
             p.imageUrl = url;
-            const { error } = await supabase.from('products').update({ data: p }).eq('id', p.id);
-            if (error) {
-                alert("Save FAILED: " + error.message + "\n\nAapka login session expire ho sakta hai. Kripya logout karke dobara login karein.");
-                return;
-            }
+            const { error } = await sb.from('products').update({ data: p }).eq('id', p.id);
+            if (error) { alert("Save FAILED: " + error.message); return; }
             renderProducts();
             openProductModal(p.id);
             alert("Image updated successfully!");
         }
 
         async function updateModalPriceDirect() {
+            if (!sb) return;
             const real = document.getElementById('quick_modal_real_price').value;
             const cut = document.getElementById('quick_modal_cut_price').value;
-            
             if (!currentModalProductId) return;
 
             const p = products.find(prod => prod.id === currentModalProductId);
             if (!p) return;
 
-            if (p.variants && p.variants.length > 0 && selectedVariantId) {
+            if (Array.isArray(p.variants) && p.variants.length > 0 && selectedVariantId) {
                 const variant = p.variants.find(v => v.id === selectedVariantId);
                 if (variant) {
                     if (real) variant.price = real;
@@ -1663,11 +1467,8 @@ Hello Support, I want to complete my purchase for this license key. Please send 
                 if (cut) p.cutPrice = cut;
             }
 
-            const { error } = await supabase.from('products').update({ data: p }).eq('id', p.id);
-            if (error) {
-                alert("Save FAILED: " + error.message);
-                return;
-            }
+            const { error } = await sb.from('products').update({ data: p }).eq('id', p.id);
+            if (error) { alert("Save FAILED: " + error.message); return; }
             renderProducts();
             updatePriceDisplay(real, cut);
             updateCheckoutLink(p.title);
@@ -1675,60 +1476,50 @@ Hello Support, I want to complete my purchase for this license key. Please send 
         }
 
         async function updateModalDescriptionDirect() {
+            if (!sb) return;
             const desc = document.getElementById('quick_modal_desc').value;
             if (!currentModalProductId) return;
-
             const p = products.find(prod => prod.id === currentModalProductId);
             if (!p) return;
 
-            if (p.variants && p.variants.length > 0 && selectedVariantId) {
+            if (Array.isArray(p.variants) && p.variants.length > 0 && selectedVariantId) {
                 const variant = p.variants.find(v => v.id === selectedVariantId);
-                if (variant) {
-                    variant.desc = desc;
-                }
+                if (variant) variant.desc = desc;
             } else {
                 p.description = desc;
             }
 
-            const { error } = await supabase.from('products').update({ data: p }).eq('id', p.id);
-            if (error) {
-                alert("Save FAILED: " + error.message);
-                return;
-            }
+            const { error } = await sb.from('products').update({ data: p }).eq('id', p.id);
+            if (error) { alert("Save FAILED: " + error.message); return; }
             renderProducts();
             document.getElementById('tab-desc-content').innerHTML = formatTextWithLinks(desc);
             alert("Description updated successfully!");
         }
 
         async function updateModalActivationDirect() {
+            if (!sb) return;
             const act = document.getElementById('quick_modal_activation').value;
             if (!currentModalProductId) return;
-
             const p = products.find(prod => prod.id === currentModalProductId);
             if (!p) return;
 
-            if (p.variants && p.variants.length > 0 && selectedVariantId) {
+            if (Array.isArray(p.variants) && p.variants.length > 0 && selectedVariantId) {
                 const variant = p.variants.find(v => v.id === selectedVariantId);
-                if (variant) {
-                    variant.activation = act;
-                }
+                if (variant) variant.activation = act;
             } else {
                 p.activation = act;
             }
 
-            const { error } = await supabase.from('products').update({ data: p }).eq('id', p.id);
-            if (error) {
-                alert("Save FAILED: " + error.message);
-                return;
-            }
+            const { error } = await sb.from('products').update({ data: p }).eq('id', p.id);
+            if (error) { alert("Save FAILED: " + error.message); return; }
             renderProducts();
             document.getElementById('tab-activation-content').innerHTML = formatTextWithLinks(act);
             alert("Activation steps updated successfully!");
         }
 
         async function addNewVariantToProduct() {
+            if (!sb) return;
             if (!currentModalProductId) return;
-
             const p = products.find(prod => prod.id === currentModalProductId);
             if (!p) return;
 
@@ -1744,54 +1535,37 @@ Hello Support, I want to complete my purchase for this license key. Please send 
                 return;
             }
 
-            if (!p.variants) {
-                p.variants = [];
-            }
+            if (!Array.isArray(p.variants)) p.variants = [];
 
-            const newVariant = {
+            p.variants.push({
                 id: `v_${Date.now()}`,
-                name: name,
-                sub: sub || p.sub,
+                name, sub: sub || p.sub,
                 desc: desc || p.description,
                 activation: activation || p.activation,
-                price: real,
-                cutPrice: cut
-            };
+                price: real, cutPrice: cut
+            });
 
-            p.variants.push(newVariant);
-            const { error } = await supabase.from('products').update({ data: p }).eq('id', p.id);
-            if (error) {
-                alert("Save FAILED: " + error.message);
-                return;
-            }
+            const { error } = await sb.from('products').update({ data: p }).eq('id', p.id);
+            if (error) { alert("Save FAILED: " + error.message); return; }
+
             renderProducts();
             openProductModal(p.id);
-            document.getElementById('v_new_name').value = '';
-            document.getElementById('v_new_sub').value = '';
-            document.getElementById('v_new_desc').value = '';
-            document.getElementById('v_new_activation').value = '';
-            document.getElementById('v_new_real').value = '';
-            document.getElementById('v_new_cut').value = '';
+            ['v_new_name','v_new_sub','v_new_desc','v_new_activation','v_new_real','v_new_cut']
+                .forEach(id => document.getElementById(id).value = '');
             alert("New license option added successfully!");
         }
 
         async function removeSelectedVariant() {
+            if (!sb) return;
             if (!currentModalProductId || !selectedVariantId) return;
-
             const p = products.find(prod => prod.id === currentModalProductId);
-            if (!p || !p.variants) return;
+            if (!p || !Array.isArray(p.variants)) return;
 
-            if (p.variants.length <= 1) {
-                alert("Cannot remove the last remaining variant option.");
-                return;
-            }
+            if (p.variants.length <= 1) { alert("Cannot remove the last remaining variant option."); return; }
 
             p.variants = p.variants.filter(v => v.id !== selectedVariantId);
-            const { error } = await supabase.from('products').update({ data: p }).eq('id', p.id);
-            if (error) {
-                alert("Save FAILED: " + error.message);
-                return;
-            }
+            const { error } = await sb.from('products').update({ data: p }).eq('id', p.id);
+            if (error) { alert("Save FAILED: " + error.message); return; }
             renderProducts();
             openProductModal(p.id);
             alert("License option removed successfully.");
