@@ -668,6 +668,13 @@
 
     <!-- JAVASCRIPT LOGIC ENGINE -->
     <script>
+        window.onerror = function(message, source, lineno, colno, error) {
+            alert("JS ERROR:\n" + message + "\nLine: " + lineno);
+            return false;
+        };
+        window.addEventListener('unhandledrejection', function(event) {
+            alert("PROMISE ERROR:\n" + (event.reason && event.reason.message ? event.reason.message : event.reason));
+        });
         // Initial catalog data fallback
         const initialProducts = [
             {
