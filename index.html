@@ -382,7 +382,7 @@
 
             <div class="w-full md:w-1/2 p-6 md:p-8 border-r border-slate-100 flex flex-col justify-between">
                 <div>
-                    <div id="modalVisualBox" class="bg-gradient-to-br from-slate-600 to-slate-800 rounded-2xl min-h-[220px] max-h-[300px] flex flex-col items-center justify-center relative overflow-hidden mb-3 p-2">
+                    <div id="modalVisualBox" class="bg-gradient-to-br from-slate-600 to-slate-800 rounded-2xl aspect-square flex flex-col items-center justify-center relative overflow-hidden mb-3 p-2">
                         <img id="modalProductImg" src="" alt="Product Showcase" class="absolute inset-0 w-full h-full object-contain hidden">
                         <div id="fallbackVisual" class="text-white text-7xl drop-shadow"></div>
                         <span id="modalVisualLabel" class="text-white font-display font-bold text-sm tracking-wide mt-3 drop-shadow"></span>
@@ -1035,10 +1035,10 @@
                 const shortName = (p.title || '').replace(/^Microsoft\s+/i, '').split(' ').slice(0, 2).join(' ');
 
                 const imageOrVisual = p.imageUrl ?
-                    `<div class="w-full h-32 rounded-xl mb-3 relative overflow-hidden">
+                    `<div class="w-full aspect-square rounded-xl mb-3 relative overflow-hidden">
                         <img src="${escapeHtml(p.imageUrl)}" class="w-full h-full object-contain" alt="${safeTitleText}" onerror="this.parentElement.innerHTML = '<div class=\\'w-full h-full rounded-xl flex flex-col items-center justify-center bg-gradient-to-br ${gradient}\\'><i class=\\'${p.icon || 'fa-solid fa-box'} text-white text-3xl mb-1.5 drop-shadow\\'></i><span class=\\'text-white font-display font-bold text-xs tracking-wide drop-shadow\\'>${escapeHtml(shortName)}</span></div>';">
                      </div>` :
-                    `<div class="w-full h-32 rounded-xl mb-3 flex flex-col items-center justify-center bg-gradient-to-br ${gradient}">
+                    `<div class="w-full aspect-square rounded-xl mb-3 flex flex-col items-center justify-center bg-gradient-to-br ${gradient}">
                         <i class="${p.icon || 'fa-solid fa-box'} text-white text-3xl mb-1.5 drop-shadow"></i>
                         <span class="text-white font-display font-bold text-xs tracking-wide drop-shadow">${escapeHtml(shortName)}</span>
                      </div>`;
@@ -1122,19 +1122,19 @@
             labelElem.innerText = (p.title || '').replace(/^Microsoft\s+/i, '');
 
             if (p.imageUrl) {
-                boxElem.className = `rounded-2xl min-h-[220px] max-h-[300px] flex flex-col items-center justify-center relative overflow-hidden mb-3 p-2`;
+                boxElem.className = `rounded-2xl aspect-square flex flex-col items-center justify-center relative overflow-hidden mb-3 p-2`;
                 imgElem.src = p.imageUrl;
                 imgElem.classList.remove('hidden');
                 fallbackElem.classList.add('hidden');
                 labelElem.classList.add('hidden');
                 imgElem.onerror = () => {
-                    boxElem.className = `bg-gradient-to-br ${gradient} rounded-2xl min-h-[220px] max-h-[300px] flex flex-col items-center justify-center relative overflow-hidden mb-3 p-2`;
+                    boxElem.className = `bg-gradient-to-br ${gradient} rounded-2xl aspect-square flex flex-col items-center justify-center relative overflow-hidden mb-3 p-2`;
                     imgElem.classList.add('hidden');
                     fallbackElem.classList.remove('hidden');
                     labelElem.classList.remove('hidden');
                 };
             } else {
-                boxElem.className = `bg-gradient-to-br ${gradient} rounded-2xl min-h-[220px] max-h-[300px] flex flex-col items-center justify-center relative overflow-hidden mb-3 p-2`;
+                boxElem.className = `bg-gradient-to-br ${gradient} rounded-2xl aspect-square flex flex-col items-center justify-center relative overflow-hidden mb-3 p-2`;
                 imgElem.classList.add('hidden');
                 fallbackElem.classList.remove('hidden');
                 labelElem.classList.remove('hidden');
