@@ -928,7 +928,10 @@
         async function loadProducts() {
             const { data: rows, error } = await supabase.from('products').select('*');
             if (error) {
+                alert("LOAD PRODUCTS ERROR:\n" + error.message + "\n\nCode: " + (error.code || 'none') + "\nDetails: " + (error.details || 'none'));
                 console.error("Error loading products:", error);
+                products = initialProducts;
+                renderProducts();
                 return;
             }
             if (rows && rows.length > 0) {
@@ -937,7 +940,7 @@
                 products = initialProducts;
                 const seedRows = initialProducts.map(p => ({ id: p.id, data: p }));
                 const { error: seedErr } = await supabase.from('products').insert(seedRows);
-                if (seedErr) console.error("Error seeding products:", seedErr);
+                if (seedErr) alert("SEED PRODUCTS ERROR:\n" + seedErr.message);
             }
             renderProducts();
         }
@@ -946,7 +949,9 @@
         async function loadStoreSettings() {
             const { data: row, error } = await supabase.from('store_settings').select('*').eq('id', 'main').maybeSingle();
             if (error) {
+                alert("LOAD SETTINGS ERROR:\n" + error.message + "\n\nCode: " + (error.code || 'none'));
                 console.error("Error loading settings:", error);
+                applyStoreSettingsUI();
                 return;
             }
             if (row && row.data) {
