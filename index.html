@@ -382,9 +382,10 @@
 
             <div class="w-full md:w-1/2 p-6 md:p-8 border-r border-slate-100 flex flex-col justify-between">
                 <div>
-                    <div class="bg-slate-900 border border-slate-800 rounded-2xl min-h-[220px] max-h-[300px] flex items-center justify-center relative overflow-hidden mb-3 p-2">
-                        <div id="fallbackVisual" class="text-slate-700 text-7xl hidden"></div>
-                        <img id="modalProductImg" src="" alt="Product Showcase" class="w-full h-full max-h-[280px] object-contain rounded-xl hidden">
+                    <div id="modalVisualBox" class="bg-gradient-to-br from-slate-600 to-slate-800 rounded-2xl min-h-[220px] max-h-[300px] flex flex-col items-center justify-center relative overflow-hidden mb-3 p-2">
+                        <img id="modalProductImg" src="" alt="Product Showcase" class="absolute inset-0 w-full h-full object-contain hidden">
+                        <div id="fallbackVisual" class="text-white text-7xl drop-shadow"></div>
+                        <span id="modalVisualLabel" class="text-white font-display font-bold text-sm tracking-wide mt-3 drop-shadow"></span>
                     </div>
 
                     <div id="adminImageControlBox" class="mb-3 bg-slate-100/70 p-2.5 rounded-xl border border-slate-200/80 flex items-center gap-2 hidden">
@@ -1025,12 +1026,22 @@
                     ? `<span class="absolute top-2 right-2 bg-amber-500 text-slate-950 font-black text-[8px] px-2 py-0.5 rounded-full uppercase tracking-wider z-10 shadow-sm">${safeBadgeText}</span>`
                     : '';
 
+                const categoryStyles = {
+                    os: 'from-blue-600 to-blue-800',
+                    office: 'from-orange-500 to-rose-600',
+                    antivirus: 'from-emerald-500 to-emerald-700'
+                };
+                const gradient = categoryStyles[p.category] || 'from-slate-600 to-slate-800';
+                const shortName = (p.title || '').replace(/^Microsoft\s+/i, '').split(' ').slice(0, 2).join(' ');
+
                 const imageOrVisual = p.imageUrl ?
-                    `<div class="w-full h-32 bg-slate-900 rounded-xl mb-3 flex items-center justify-center p-1 overflow-hidden relative">
-                        <img src="${escapeHtml(p.imageUrl)}" class="w-full h-full object-contain rounded-lg" alt="${safeTitleText}" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');">
-                        <div class="text-slate-700 text-4xl hidden"><i class="${p.icon || 'fa-solid fa-box'}"></i></div>
+                    `<div class="w-full h-32 rounded-xl mb-3 relative overflow-hidden">
+                        <img src="${escapeHtml(p.imageUrl)}" class="w-full h-full object-contain" alt="${safeTitleText}" onerror="this.parentElement.innerHTML = '<div class=\\'w-full h-full rounded-xl flex flex-col items-center justify-center bg-gradient-to-br ${gradient}\\'><i class=\\'${p.icon || 'fa-solid fa-box'} text-white text-3xl mb-1.5 drop-shadow\\'></i><span class=\\'text-white font-display font-bold text-xs tracking-wide drop-shadow\\'>${escapeHtml(shortName)}</span></div>';">
                      </div>` :
-                    `<div class="w-full h-32 bg-slate-100 rounded-xl mb-3 flex items-center justify-center text-slate-400 text-4xl"><i class="${p.icon || 'fa-solid fa-box'}"></i></div>`;
+                    `<div class="w-full h-32 rounded-xl mb-3 flex flex-col items-center justify-center bg-gradient-to-br ${gradient}">
+                        <i class="${p.icon || 'fa-solid fa-box'} text-white text-3xl mb-1.5 drop-shadow"></i>
+                        <span class="text-white font-display font-bold text-xs tracking-wide drop-shadow">${escapeHtml(shortName)}</span>
+                     </div>`;
 
                 const hasVariants = Array.isArray(p.variants) && p.variants.length > 0;
                 const displayPrice = hasVariants ? p.variants[0].price : p.price;
@@ -1096,17 +1107,37 @@
 
             document.getElementById('modalProductTitle').innerText = p.title || '';
 
-            const imgElem = document.getElementById('modalProductImg');
             const fallbackElem = document.getElementById('fallbackVisual');
+            const labelElem = document.getElementById('modalVisualLabel');
+            const boxElem = document.getElementById('modalVisualBox');
+            const imgElem = document.getElementById('modalProductImg');
+
+            const categoryGradients = {
+                os: 'from-blue-600 to-blue-800',
+                office: 'from-orange-500 to-rose-600',
+                antivirus: 'from-emerald-500 to-emerald-700'
+            };
+            const gradient = categoryGradients[p.category] || 'from-slate-600 to-slate-800';
+            fallbackElem.innerHTML = `<i class="${p.icon || 'fa-solid fa-box'}"></i>`;
+            labelElem.innerText = (p.title || '').replace(/^Microsoft\s+/i, '');
 
             if (p.imageUrl) {
+                boxElem.className = `rounded-2xl min-h-[220px] max-h-[300px] flex flex-col items-center justify-center relative overflow-hidden mb-3 p-2`;
                 imgElem.src = p.imageUrl;
                 imgElem.classList.remove('hidden');
                 fallbackElem.classList.add('hidden');
+                labelElem.classList.add('hidden');
+                imgElem.onerror = () => {
+                    boxElem.className = `bg-gradient-to-br ${gradient} rounded-2xl min-h-[220px] max-h-[300px] flex flex-col items-center justify-center relative overflow-hidden mb-3 p-2`;
+                    imgElem.classList.add('hidden');
+                    fallbackElem.classList.remove('hidden');
+                    labelElem.classList.remove('hidden');
+                };
             } else {
+                boxElem.className = `bg-gradient-to-br ${gradient} rounded-2xl min-h-[220px] max-h-[300px] flex flex-col items-center justify-center relative overflow-hidden mb-3 p-2`;
                 imgElem.classList.add('hidden');
-                fallbackElem.innerHTML = `<i class="${p.icon || 'fa-solid fa-box'}"></i>`;
                 fallbackElem.classList.remove('hidden');
+                labelElem.classList.remove('hidden');
             }
 
             const container = document.getElementById('licenseSelectorContainer');
