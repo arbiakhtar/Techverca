@@ -530,16 +530,30 @@
                     Providing authentic, official software licenses with instant automated delivery and lifetime activation support.
                 </p>
                 <div class="bg-emerald-50 border border-emerald-100 p-3.5 rounded-xl">
-                    <div class="flex items-center space-x-2 text-emerald-600 font-bold mb-2.5">
+                    <div class="flex items-center space-x-2 text-emerald-600 font-bold mb-3">
                         <i class="fas fa-shield-alt text-base"></i>
                         <span>100% Genuine Digital Activations</span>
                     </div>
-                    <div class="flex flex-wrap items-center gap-1.5 pt-2.5 border-t border-emerald-100/80">
-                        <span class="bg-white border border-emerald-200 px-2 py-1 rounded text-emerald-700 text-[10px] font-extrabold">eSewa</span>
-                        <span class="bg-white border border-slate-200 px-2 py-1 rounded text-blue-800 text-[10px] font-bold"><i class="fab fa-paypal text-blue-600 mr-1"></i>PayPal</span>
-                        <span class="bg-white border border-slate-200 px-2 py-1 rounded text-blue-600 text-[10px] font-bold"><i class="fab fa-cc-visa text-blue-700 mr-1"></i>VISA</span>
-                        <span class="bg-white border border-slate-200 px-2 py-1 rounded text-red-500 text-[10px] font-bold"><i class="fab fa-cc-mastercard text-red-600 mr-1"></i>MasterCard</span>
-                        <span class="bg-white border border-slate-200 px-2 py-1 rounded text-purple-700 text-[10px] font-bold">UPI</span>
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2 pt-2.5 border-t border-emerald-100/80">Payment Methods:</p>
+                    <div class="flex flex-wrap items-center gap-2.5">
+                        <div class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center shadow-sm" title="PayPal">
+                            <i class="fab fa-paypal text-[#003087] text-base"></i>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center shadow-sm" title="VISA">
+                            <i class="fab fa-cc-visa text-[#1A1F71] text-base"></i>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center shadow-sm" title="MasterCard">
+                            <i class="fab fa-cc-mastercard text-[#EB001B] text-base"></i>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center shadow-sm" title="American Express">
+                            <i class="fab fa-cc-amex text-[#2E77BC] text-base"></i>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-white border-2 border-slate-800 flex items-center justify-center shadow-sm text-slate-900 font-black text-[8px] leading-none" title="UPI">
+                            UPI
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center shadow-sm text-white font-black text-[9px]" title="eSewa">
+                            eS
+                        </div>
                     </div>
                 </div>
             </div>
@@ -913,17 +927,29 @@
         }
 
         const recentOrders = [
-            { name: "Rahul S.", city: "Mumbai", item: "Microsoft Windows 11 Pro Retail", time: "2 mins ago" },
-            { name: "Vikram P.", city: "Delhi", item: "Microsoft Office 2021 Pro Plus", time: "4 mins ago" },
-            { name: "Ankit M.", city: "Bangalore", item: "Microsoft Windows 10 Pro Retail", time: "5 mins ago" },
-            { name: "Suresh K.", city: "Hyderabad", item: "Microsoft Windows 11 Pro OEM", time: "1 min ago" }
+            { name: "Rahul S.", city: "Mumbai", item: "Microsoft Windows 11 Pro Retail" },
+            { name: "Vikram P.", city: "Delhi", item: "Microsoft Office 2021 Pro Plus" },
+            { name: "Ankit M.", city: "Bangalore", item: "Microsoft Windows 10 Pro Retail" },
+            { name: "Suresh K.", city: "Hyderabad", item: "Microsoft Windows 11 Pro OEM" },
+            { name: "Priya D.", city: "Pune", item: "McAfee Total Protection Antivirus" },
+            { name: "Neha T.", city: "Chennai", item: "ESET NOD32 Antivirus" },
+            { name: "Amit R.", city: "Jaipur", item: "Windows 10 Home OEM" },
+            { name: "Kavita J.", city: "Kolkata", item: "Microsoft Office 2021 Pro Plus" }
         ];
+
+        function getRandomTimeAgo() {
+            const roll = Math.random();
+            if (roll < 0.1) return "just now";
+            const hours = Math.floor(Math.random() * 20) + 1; // 1 to 20 hours
+            return hours === 1 ? "1 hour ago" : `${hours} hours ago`;
+        }
 
         function showSalesPopup() {
             const oldPopup = document.getElementById('salesPopup');
             if (oldPopup) oldPopup.remove();
 
             const order = recentOrders[Math.floor(Math.random() * recentOrders.length)];
+            const timeAgo = getRandomTimeAgo();
             const popup = document.createElement('div');
             popup.className = "fixed bottom-16 left-4 bg-white border border-slate-200/90 shadow-2xl rounded-2xl p-3 z-50 flex items-center gap-3 max-w-xs animate-popup";
             popup.id = "salesPopup";
@@ -934,7 +960,7 @@
                 <div class="text-[11px]">
                     <p class="font-bold text-slate-900">${escapeHtml(order.name)} <span class="text-slate-400 font-normal">(${escapeHtml(order.city)})</span></p>
                     <p class="text-slate-500">Bought <span class="text-blue-600 font-bold">${escapeHtml(order.item)}</span></p>
-                    <p class="text-[9px] text-slate-400 flex items-center mt-0.5"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-1 inline-block"></span> ${escapeHtml(order.time)} • Verified Order</p>
+                    <p class="text-[9px] text-slate-400 flex items-center mt-0.5"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-1 inline-block"></span> ${escapeHtml(timeAgo)} • Verified Order</p>
                 </div>
             `;
             document.body.appendChild(popup);
@@ -1001,7 +1027,7 @@
 
                 const imageOrVisual = p.imageUrl ?
                     `<div class="w-full h-32 bg-slate-900 rounded-xl mb-3 flex items-center justify-center p-1 overflow-hidden relative">
-                        <img src="${escapeHtml(p.imageUrl)}" class="w-full h-full object-contain rounded-lg" alt="${safeTitleText}" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');">
+                        <img src="${escapeHtml(p.imageUrl)}" class="w-full h-full object-cover rounded-lg" alt="${safeTitleText}" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');">
                         <div class="text-slate-700 text-4xl hidden"><i class="${p.icon || 'fa-solid fa-box'}"></i></div>
                      </div>` :
                     `<div class="w-full h-32 bg-slate-100 rounded-xl mb-3 flex items-center justify-center text-slate-400 text-4xl"><i class="${p.icon || 'fa-solid fa-box'}"></i></div>`;
