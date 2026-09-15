@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSP: jsdelivr + cdnjs + tailwind allowed -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' https: data:; connect-src 'self' https://ldwktjodwfvyynjemzzc.supabase.co wss://ldwktjodwfvyynjemzzc.supabase.co; frame-src 'none'; object-src 'none'; base-uri 'self';">
     <title>TechVerca | Premium Authorized Software Hub</title>
     <meta name="description" content="Buy genuine Microsoft Windows, Office, and Antivirus software license keys with instant digital delivery via Telegram.">
@@ -39,10 +38,8 @@
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans antialiased pb-20">
 
-    <!-- Slide-over Drawer Backdrop -->
     <div id="drawerBackdrop" onclick="closeNavDrawer()" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 hidden transition-opacity"></div>
 
-    <!-- Slide-over Navigation Drawer Sidebar -->
     <div id="navDrawer" class="fixed top-0 left-0 bottom-0 w-80 max-w-[85vw] bg-white z-50 shadow-2xl -translate-x-full transition-transform duration-300 flex flex-col justify-between overflow-y-auto">
         <div>
             <div class="p-4 bg-slate-900 text-white flex items-center justify-between border-b border-slate-800">
@@ -108,14 +105,12 @@
         </div>
     </div>
 
-    <!-- Top Promo Banner -->
     <div class="bg-[#0b132b] text-slate-300 text-center py-2 text-xs font-medium tracking-wide">
         <span class="inline-block text-amber-400 mr-1">✦</span> 
         EXECUTIVE SALE: Genuine Retail Licenses. Offer Closes In: 
         <span id="countdown" class="font-mono bg-[#1c2541] px-2 py-0.5 rounded text-amber-400 border border-slate-700/50 ml-1">13:11</span>
     </div>
 
-    <!-- Navigation Bar -->
     <nav class="bg-white border-b border-slate-100 sticky top-0 z-40 shadow-sm px-4 py-3">
         <div class="max-w-7xl mx-auto flex items-center justify-between gap-2">
             <div class="flex items-center space-x-3">
@@ -136,7 +131,6 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
     <section class="bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-white py-10 px-4 text-center border-b border-slate-800">
         <div class="max-w-4xl mx-auto">
             <span class="bg-blue-600/30 text-blue-400 border border-blue-500/30 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider inline-block mb-3">
@@ -178,7 +172,6 @@
         </div>
     </section>
 
-    <!-- Category Pill Filter Tabs -->
     <section class="bg-white border-b border-slate-100 py-3 px-4 shadow-sm sticky top-[57px] z-30">
         <div class="max-w-7xl mx-auto flex items-center space-x-2 overflow-x-auto no-scrollbar">
             <button onclick="filterCategory('all')" class="category-btn px-5 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition bg-blue-600 text-white shadow-sm" id="btn-all">All Products</button>
@@ -188,7 +181,6 @@
         </div>
     </section>
 
-    <!-- ADMIN DASHBOARD -->
     <div id="adminPanel" class="max-w-7xl mx-4 lg:mx-auto p-5 bg-slate-900 border border-slate-800 rounded-2xl my-6 hidden shadow-xl text-slate-200">
         <div class="flex justify-between items-center mb-6 border-b border-slate-800 pb-4">
             <h2 class="text-base font-bold tracking-wide flex items-center text-white"><i class="fas fa-sliders text-blue-500 mr-2"></i>TechVerca Secure Console Panel</h2>
@@ -279,7 +271,6 @@
         </form>
     </div>
 
-    <!-- HOW IT WORKS -->
     <section class="max-w-6xl mx-auto px-4 py-10">
         <div class="text-center mb-8">
             <span class="text-[10px] font-bold text-blue-600 tracking-widest uppercase block mb-1">Simple 3-Step Process</span>
@@ -304,12 +295,10 @@
         </div>
     </section>
 
-    <!-- Main Store Section -->
     <main id="store" class="max-w-7xl mx-auto px-4 py-6">
         <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5" id="productsGrid"></div>
     </main>
 
-    <!-- REVIEWS -->
     <section class="max-w-7xl mx-auto px-4 py-10 border-t border-slate-200/80">
         <div class="text-center mb-8">
             <span class="text-[10px] font-bold text-blue-600 tracking-widest uppercase block mb-1">Real Client Feedback</span>
@@ -346,7 +335,6 @@
         </div>
     </section>
 
-    <!-- FAQ -->
     <section id="faq" class="max-w-4xl mx-auto px-4 py-10 border-t border-slate-200/80">
         <div class="text-center mb-8">
             <span class="text-[10px] font-bold text-blue-600 tracking-widest uppercase block mb-1">Got Questions?</span>
@@ -386,7 +374,6 @@
         </div>
     </section>
 
-    <!-- PRODUCT MODAL -->
     <div id="productModal" style="display:none; z-index: 9999;" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl max-w-5xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative flex flex-col md:flex-row border border-slate-100">
             
@@ -506,7 +493,6 @@
         </div>
     </div>
 
-    <!-- POLICY MODAL -->
     <div id="policyModal" style="display:none; z-index: 9999;" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl max-w-3xl w-full max-h-[85vh] overflow-y-auto shadow-2xl relative p-6 md:p-8 border border-slate-100">
             <button onclick="closePolicyModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-900 text-sm z-50 bg-slate-100 border border-slate-200 p-2 rounded-full h-9 w-9 flex items-center justify-center transition">
@@ -517,7 +503,6 @@
         </div>
     </div>
 
-    <!-- FOOTER -->
     <footer class="bg-white text-slate-600 pt-10 pb-24 border-t border-slate-200 text-xs">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
             <div>
@@ -592,7 +577,6 @@
         </div>
     </footer>
 
-    <!-- STICKY BOTTOM NAV -->
     <div class="fixed bottom-0 inset-x-0 bg-white border-t border-slate-200/80 z-40 py-2 shadow-lg">
         <div class="max-w-md mx-auto grid grid-cols-4 text-center">
             <a href="#store" onclick="filterCategory('all')" class="flex flex-col items-center justify-center text-slate-500 hover:text-blue-600 transition">
@@ -614,7 +598,6 @@
         </div>
     </div>
 
-    <!-- ADMIN LOGIN MODAL -->
     <div id="adminLoginModal" style="display:none; z-index: 9999;" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl max-w-sm w-full shadow-2xl relative p-6 border border-slate-100">
             <button onclick="closeAdminLoginModal()" class="absolute top-3 right-3 text-slate-400 hover:text-slate-900 text-sm bg-slate-100 border border-slate-200 p-2 rounded-full h-8 w-8 flex items-center justify-center transition">
@@ -633,18 +616,15 @@
         </div>
     </div>
 
-    <!-- SUPABASE SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
     <script>
-        // ---- DEBUG: remove after fixing ----
-        window.onerror = function (message, source, lineno, colno) {
+        window.onerror = function (message, source, lineno) {
             console.error("JS ERROR:", message, "Line:", lineno);
             return false;
         };
         window.addEventListener('unhandledrejection', e => console.error("PROMISE ERROR:", e.reason));
 
-        // ================= INITIAL LOCAL CATALOG (always available) =================
         const initialProducts = [
             {
                 id: "win11_pro_retail",
@@ -753,18 +733,16 @@
             }
         ];
 
-        // Fill in activation text for variants missing it
         initialProducts.forEach(p => {
             (p.variants || []).forEach(v => { if (!v.activation) v.activation = p.activation; });
         });
 
-        // ================= STATE =================
         let products = initialProducts.slice();
         let activeCategory = 'all';
         let currentModalProductId = null;
         let selectedVariantId = null;
         let isAdminLoggedIn = false;
-        let sb = null; // Supabase client (may be null)
+        let sb = null;
 
         let storeSettings = {
             email: "support@techverca.com",
@@ -777,7 +755,6 @@
         const SUPABASE_URL = "https://ldwktjodwfvyynjemzzc.supabase.co";
         const SUPABASE_ANON_KEY = "sb_publishable_4T751KfPgKJybm8owvsoRg_o707OhsZ";
 
-        // ================= SAFE SUPABASE INIT =================
         function initSupabase() {
             try {
                 if (!window.supabase || typeof window.supabase.createClient !== 'function') {
@@ -791,7 +768,6 @@
             }
         }
 
-        // ================= SUPABASE LOADERS =================
         async function loadProducts() {
             if (!sb) return;
             try {
@@ -799,19 +775,17 @@
 
                 if (error) {
                     console.error("[TechVerca] products load error:", error.message, error.code, error.details);
-                    return; // local products already rendered — kuch na karo
+                    return;
                 }
 
                 if (rows && rows.length > 0) {
                     const remote = rows.map(r => r.data).filter(Boolean);
                     if (remote.length > 0) {
-                        // Normalize: variants hamesha array ho
                         remote.forEach(p => { if (!Array.isArray(p.variants)) p.variants = []; });
                         products = remote;
                         renderProducts(document.getElementById('productSearch')?.value || '');
                     }
                 }
-                // rows empty => local catalog hi dikhne do (seed mat karo, RLS block kar sakta hai)
             } catch (e) {
                 console.error("[TechVerca] loadProducts exception:", e);
             }
@@ -834,9 +808,7 @@
             }
         }
 
-        // ================= BOOT =================
         document.addEventListener('DOMContentLoaded', () => {
-            // 1) INSTANT RENDER — network ka intezaar nahi
             products = initialProducts.slice();
             renderProducts();
             applyStoreSettingsUI();
@@ -844,7 +816,6 @@
             setInterval(showSalesPopup, 10000);
             initKeyForge();
 
-            // 2) Supabase (optional upgrade)
             sb = initSupabase();
             if (!sb) return;
 
@@ -875,7 +846,6 @@
             }
         });
 
-        // ================= KEY FORGE =================
         function initKeyForge() {
             const el = document.getElementById('keyForgeDisplay');
             const dotEl = document.getElementById('keyForgeDot');
@@ -912,7 +882,6 @@
             }, 90);
         }
 
-        // ================= DRAWER =================
         function openNavDrawer() {
             document.getElementById('navDrawer').classList.remove('-translate-x-full');
             document.getElementById('drawerBackdrop').classList.remove('hidden');
@@ -966,7 +935,6 @@
             setTimeout(() => { if (popup) popup.remove(); }, 4000);
         }
 
-        // ================= HELPERS =================
         function escapeHtml(text) {
             if (text === null || text === undefined) return '';
             return String(text)
@@ -986,7 +954,6 @@
             }).replace(/\n/g, '<br>');
         }
 
-        // ================= RENDER =================
         function renderProducts(filterQuery = '') {
             const grid = document.getElementById('productsGrid');
             if (!grid) return;
@@ -1090,7 +1057,6 @@
             renderProducts(document.getElementById('productSearch').value);
         }
 
-        // ================= PRODUCT MODAL =================
         function openProductModal(productId) {
             currentModalProductId = productId;
             const p = products.find(prod => prod.id === productId);
@@ -1264,7 +1230,6 @@ Hello Support, I want to complete my purchase for this license key.`;
             if (elem) elem.classList.toggle('hidden');
         }
 
-        // ================= POLICIES =================
         const policyData = {
             about: { title: "About TechVerca", body: "TechVerca is a global provider of digital retail software licenses. We offer authentic digital keys for operating systems, productivity suites, and enterprise security software with automated 24/7 key generation and instant chat delivery." },
             return: { title: "Return & Refund Policy", body: "We offer a 100% money-back guarantee within 7 days of purchase if the digital license key provided fails to activate your product and our support team is unable to replace it. Once a key has been successfully validated, it cannot be refunded due to digital asset distribution regulations." },
@@ -1287,7 +1252,6 @@ Hello Support, I want to complete my purchase for this license key.`;
             document.body.classList.remove('modal-active');
         }
 
-        // ================= ADMIN =================
         function toggleAdminPanelDirect() {
             if (!isAdminLoggedIn) triggerAdminLogin();
             else document.getElementById('adminPanel').classList.toggle('hidden');
@@ -1388,7 +1352,7 @@ Hello Support, I want to complete my purchase for this license key.`;
                 variants: [{ id: `${id}_default`, name: `${title} - Standard`, sub, desc: description, activation, price, cutPrice }]
             };
 
-            const { error } = await sb.from('products').insert({ id: newProd.id, data: newProd });
+            const { error } = await sb.from('products').upsert({ id: newProd.id, data: newProd });
             if (error) { alert("Save FAILED: " + error.message); return; }
 
             products.push(newProd);
@@ -1427,7 +1391,6 @@ Hello Support, I want to complete my purchase for this license key.`;
             if (bottomLink) bottomLink.href = storeSettings.chatLink;
         }
 
-        // ---- Admin inline editors ----
         async function updateModalImageDirect() {
             if (!sb) return;
             const url = document.getElementById('quick_modal_img_url').value.trim();
@@ -1438,7 +1401,7 @@ Hello Support, I want to complete my purchase for this license key.`;
             if (!p) return;
 
             p.imageUrl = url;
-            const { error } = await sb.from('products').update({ data: p }).eq('id', p.id);
+            const { error } = await sb.from('products').upsert({ id: p.id, data: p });
             if (error) { alert("Save FAILED: " + error.message); return; }
             renderProducts();
             openProductModal(p.id);
@@ -1467,7 +1430,7 @@ Hello Support, I want to complete my purchase for this license key.`;
                 if (cut) p.cutPrice = cut;
             }
 
-            const { error } = await sb.from('products').update({ data: p }).eq('id', p.id);
+            const { error } = await sb.from('products').upsert({ id: p.id, data: p });
             if (error) { alert("Save FAILED: " + error.message); return; }
             renderProducts();
             updatePriceDisplay(real, cut);
@@ -1489,7 +1452,7 @@ Hello Support, I want to complete my purchase for this license key.`;
                 p.description = desc;
             }
 
-            const { error } = await sb.from('products').update({ data: p }).eq('id', p.id);
+            const { error } = await sb.from('products').upsert({ id: p.id, data: p });
             if (error) { alert("Save FAILED: " + error.message); return; }
             renderProducts();
             document.getElementById('tab-desc-content').innerHTML = formatTextWithLinks(desc);
@@ -1510,7 +1473,7 @@ Hello Support, I want to complete my purchase for this license key.`;
                 p.activation = act;
             }
 
-            const { error } = await sb.from('products').update({ data: p }).eq('id', p.id);
+            const { error } = await sb.from('products').upsert({ id: p.id, data: p });
             if (error) { alert("Save FAILED: " + error.message); return; }
             renderProducts();
             document.getElementById('tab-activation-content').innerHTML = formatTextWithLinks(act);
@@ -1545,7 +1508,7 @@ Hello Support, I want to complete my purchase for this license key.`;
                 price: real, cutPrice: cut
             });
 
-            const { error } = await sb.from('products').update({ data: p }).eq('id', p.id);
+            const { error } = await sb.from('products').upsert({ id: p.id, data: p });
             if (error) { alert("Save FAILED: " + error.message); return; }
 
             renderProducts();
@@ -1564,7 +1527,7 @@ Hello Support, I want to complete my purchase for this license key.`;
             if (p.variants.length <= 1) { alert("Cannot remove the last remaining variant option."); return; }
 
             p.variants = p.variants.filter(v => v.id !== selectedVariantId);
-            const { error } = await sb.from('products').update({ data: p }).eq('id', p.id);
+            const { error } = await sb.from('products').upsert({ id: p.id, data: p });
             if (error) { alert("Save FAILED: " + error.message); return; }
             renderProducts();
             openProductModal(p.id);
