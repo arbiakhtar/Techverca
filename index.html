@@ -768,6 +768,7 @@
             }
         }
 
+        // ✅ MERGED LOADER — local + remote dono dikhenge, koi product kabhi gayab nahi hoga
         async function loadProducts() {
             if (!sb) return;
             try {
@@ -778,14 +779,22 @@
                     return;
                 }
 
+                // Base: saare local products
+                const mergedMap = new Map();
+                initialProducts.forEach(p => mergedMap.set(p.id, JSON.parse(JSON.stringify(p))));
+
+                // Overlay: Supabase wale products (same id wala local ko replace kar dega)
                 if (rows && rows.length > 0) {
-                    const remote = rows.map(r => r.data).filter(Boolean);
-                    if (remote.length > 0) {
-                        remote.forEach(p => { if (!Array.isArray(p.variants)) p.variants = []; });
-                        products = remote;
-                        renderProducts(document.getElementById('productSearch')?.value || '');
-                    }
+                    rows.forEach(r => {
+                        if (!r || !r.data) return;
+                        const remoteProd = r.data;
+                        if (!Array.isArray(remoteProd.variants)) remoteProd.variants = [];
+                        mergedMap.set(remoteProd.id, remoteProd);
+                    });
                 }
+
+                products = Array.from(mergedMap.values());
+                renderProducts(document.getElementById('productSearch')?.value || '');
             } catch (e) {
                 console.error("[TechVerca] loadProducts exception:", e);
             }
