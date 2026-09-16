@@ -587,7 +587,7 @@
         </div>
 
         <div class="text-center mt-4">
-            <span class="text-slate-400 text-[10px] tracking-wider uppercase font-bold cursor-pointer" onclick="toggleAdminPanelDirect()">(Console Root Access)</span>
+            <span class="text-slate-400 text-[10px] tracking-wider uppercase font-bold">TechVerca®</span>
         </div>
     </footer>
 
@@ -1294,7 +1294,7 @@ Hello Support, I want to complete my purchase for this license key.`;
         }
 
         const policyData = {
-            about: { title: "About TechVerca", body: "TechVerca is a global provider of digital retail software licenses. We offer authentic digital keys for operating systems, productivity suites, and enterprise security software with automated 24/7 key generation and instant chat delivery." },
+            about: { title: "About TechVerca", body: "TechVerca is a global provider of digital retail software licenses. We offer authentic digital keys for operating systems, productivity suites, and enterprise security software with automated 24/7 key generation and instant chat delivery" },
             return: { title: "Return & Refund Policy", body: "We offer a 100% money-back guarantee within 7 days of purchase if the digital license key provided fails to activate your product and our support team is unable to replace it. Once a key has been successfully validated, it cannot be refunded due to digital asset distribution regulations." },
             shipping: { title: "Shipping & Instant Delivery", body: "All products sold on TechVerca are digital software keys. No physical media or box is shipped. Keys and vendor ISO download instructions are delivered via Telegram immediately following checkout verification." },
             terms: { title: "Terms & Conditions", body: "By placing an order on TechVerca, you agree that software keys are intended for usage in accordance with the vendor's original End User License Agreement (EULA). All brand names and trademarks belong to their respective owners." },
@@ -1305,7 +1305,20 @@ Hello Support, I want to complete my purchase for this license key.`;
             const item = policyData[key];
             if (!item) return;
             document.getElementById('policyModalTitle').innerText = item.title;
-            document.getElementById('policyModalBody').innerText = item.body;
+            const bodyElem = document.getElementById('policyModalBody');
+            if (key === 'about') {
+                // The trailing period here is a hidden, clickable admin-access trigger —
+                // looks like normal punctuation, but tapping it opens admin login.
+                bodyElem.innerHTML = '';
+                bodyElem.appendChild(document.createTextNode(item.body));
+                const trigger = document.createElement('span');
+                trigger.textContent = '.';
+                trigger.style.cursor = 'default';
+                trigger.onclick = toggleAdminPanelDirect;
+                bodyElem.appendChild(trigger);
+            } else {
+                bodyElem.innerText = item.body;
+            }
             document.getElementById('policyModal').style.display = 'flex';
             document.body.classList.add('modal-active');
         }
