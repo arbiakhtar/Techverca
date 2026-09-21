@@ -484,11 +484,19 @@
                         <span id="modalVisualLabel" class="text-white font-display font-bold text-sm tracking-wide mt-3 drop-shadow"></span>
                     </div>
 
-                    <div id="adminImageControlBox" class="mb-3 bg-slate-100/70 p-2.5 rounded-xl border border-slate-200/80 flex items-center gap-2 hidden">
-                        <input type="url" id="quick_modal_img_url" placeholder="Paste Image URL here..." class="w-full bg-white border border-slate-300 px-3 py-1.5 rounded-lg text-xs text-slate-800 focus:outline-none focus:border-blue-600">
-                        <button onclick="updateModalImageDirect()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg shrink-0 transition flex items-center shadow-sm">
-                            <i class="fas fa-plus mr-1"></i> Set Image
-                        </button>
+                    <div id="adminImageControlBox" class="mb-3 bg-slate-100/70 p-2.5 rounded-xl border border-slate-200/80 hidden space-y-2">
+                        <div class="flex items-center gap-2">
+                            <input type="url" id="quick_modal_img_url" placeholder="Paste Image URL here..." class="w-full bg-white border border-slate-300 px-3 py-1.5 rounded-lg text-xs text-slate-800 focus:outline-none focus:border-blue-600">
+                            <button onclick="updateModalImageDirect()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg shrink-0 transition flex items-center shadow-sm">
+                                <i class="fas fa-plus mr-1"></i> Set Image
+                            </button>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <input type="file" id="quick_modal_img_file" accept="image/*" class="w-full bg-white border border-slate-300 px-2 py-1.5 rounded-lg text-[11px] text-slate-800 focus:outline-none focus:border-blue-600">
+                            <button onclick="uploadModalImageFile()" id="upload_img_btn" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg shrink-0 transition flex items-center shadow-sm">
+                                <i class="fas fa-upload mr-1"></i> <span id="upload_img_btn_text">Upload</span>
+                            </button>
+                        </div>
                     </div>
 
                     <div id="adminPriceControlBox" class="mb-5 bg-slate-100/70 p-2.5 rounded-xl border border-slate-200/80 hidden">
@@ -1625,6 +1633,52 @@ Hello Support, I want to complete my purchase for this license key.`;
             if (phoneLink) phoneLink.href = storeSettings.chatLink;
             const bottomLink = document.getElementById('bottom_chat_link');
             if (bottomLink) bottomLink.href = storeSettings.chatLink;
+        }
+
+        async function uploadModalImageFile() {
+            if (!sb) { alert("Supabase connect nahi hai."); return; }
+            const fileInput = document.getElementById('quick_modal_img_file');
+            const file = fileInput.files[0];
+            if (!file) { alert("Pehle koi image file select karein."); return; }
+            if (!currentModalProductId) { alert("Koi product select nahi hai."); return; }
+
+            const btn = document.getElementById('upload_img_btn');
+            const btnText = document.getElementById('upload_img_btn_text');
+            btn.disabled = true;
+            btn.classList.add('opacity-70', 'cursor-not-allowed');
+            btnText.textContent = "Uploading...";
+
+            try {
+                const fileExt = file.name.split('.').pop();
+                const filePath = `${currentModalProductId}_${Date.now()}.${fileExt}`;
+
+                const { error: uploadError } = await sb.storage.from('product-images').upload(filePath, file, { upsert: true });
+                if (uploadError) {
+                    alert("Upload FAILED: " + uploadError.message);
+                    return;
+                }
+
+                const { data: urlData } = sb.storage.from('product-images').getPublicUrl(filePath);
+                const publicUrl = urlData.publicUrl;
+
+                const p = products.find(prod => prod.id === currentModalProductId);
+                if (!p) return;
+                p.imageUrl = publicUrl;
+
+                const { error: dbError } = await sb.from('products').upsert({ id: p.id, data: p });
+                if (dbError) { alert("Image uploaded, but saving to product FAILED: " + dbError.message); return; }
+
+                renderProducts();
+                openProductModal(p.id);
+                fileInput.value = '';
+                alert("Image uploaded and set successfully!");
+            } catch (e) {
+                alert("Upload exception: " + e.message);
+            } finally {
+                btn.disabled = false;
+                btn.classList.remove('opacity-70', 'cursor-not-allowed');
+                btnText.textContent = "Upload";
+            }
         }
 
         async function updateModalImageDirect() {
